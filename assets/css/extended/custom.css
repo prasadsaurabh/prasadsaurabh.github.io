@@ -1,24 +1,12 @@
-.profile-mode .profile img {
-    object-fit: cover;
-    object-position: center top;
+/* Square photo with rounded corners - override PaperMod circle */
+.profile-mode .profile img,
+.profile-mode .profile a img,
+.profile img {
+    object-fit: cover !important;
+    object-position: center top !important;
     border-radius: 6px !important;
-}
-
-/* Force header to show on profile/homepage */
-.profile-mode .header {
-    display: block !important;
-    position: relative;
-}
-
-.profile-mode .nav {
-    display: flex !important;
-}
-
-.profile-mode #menu {
-    display: flex !important;
-    list-style: none;
-}
-
-.profile-mode .logo {
-    display: block !important;
+    clip-path: none !important;
+    -webkit-clip-path: none !important;
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
 }
