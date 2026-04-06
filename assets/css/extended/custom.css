@@ -2,3 +2,15 @@
     object-fit: cover;
     object-position: center top;
 }
+
+.nav {
+    display: flex !important;
+}
+
+header {
+    display: block !important;
+}
+
+.logo {
+    display: block !important;
+}
