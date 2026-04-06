@@ -32,6 +32,14 @@ menu:
       weight: 6
 
 params:
+  hideFooter: false
+  disableThemeToggle: true
+  ShowShareButtons: false
+  ShowReadingTime: false
+  ShowAllPagesInArchive: false
+  ShowToc: false
+  assets:
+    disableScrollBarStyle: true
   description: "Machine Learning and Signal Processing Lab, University of Houston"
   author: Saurabh Prasad
   googleAnalyticsID: ""
