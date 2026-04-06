@@ -10,4 +10,7 @@
     mask-image: none !important;
     -webkit-mask-image: none !important;
     mix-blend-mode: multiply !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
 }
