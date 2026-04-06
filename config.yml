@@ -1,6 +1,7 @@
 baseURL: "https://prasadsaurabh.github.io"
 title: "Saurabh Prasad"
-paginate: 20
+pagination:
+  pagerSize: 20
 theme: PaperMod
 
 enableInlineShortcodes: true
