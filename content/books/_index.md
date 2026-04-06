@@ -1,4 +1,4 @@
 ---
 title: "Books"
-description: "Books by Professor Dr von Igelfeld's."
+description: "Edited volumes and books by Saurabh Prasad"
 ---
