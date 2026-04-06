@@ -5,7 +5,7 @@ layout: "home"
 
 I am a Full Professor in the [Department of Electrical and Computer Engineering](https://ece.egr.uh.edu/) at the [University of Houston](https://www.uh.edu/), where I direct the **Machine Learning and Signal Processing (MLSP) Laboratory**.
 
-My research advances the state of the art in machine learning and signal processing, with applications to **geospatial imaging (GeoAI)** and **biomedicine**. Current focus areas include foundation models and large vision models for semantic segmentation, parameter-efficient fine-tuning (LoRA), active learning with human-in-the-loop workflows, and multi-sensor/multi-scale image analysis.
+My research advances the state of the art in machine learning and signal processing, with applications to **geospatial imaging (GeoAI)** and **biomedicine**. Current focus areas include foundation models and large vision models for semantic segmentation, knowledge transfer, active learning with human-in-the-loop workflows, and multi-sensor/multi-scale image analysis.
 
 Our lab is supported by NASA, NSF, NIH, DoD, and Amazon AWS. I am an **IEEE GRSS Distinguished Lecturer** and a Senior Member of IEEE. I organize the [GeoCV](https://sites.google.com/view/geocv/) workshop at WACV and the [MORSE](https://sites.google.com/view/cvpr-morse) workshop at CVPR.
 
