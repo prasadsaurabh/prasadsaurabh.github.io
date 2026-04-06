@@ -27,4 +27,66 @@ menu:
     - name: News
       url: /news/
       weight: 5
-    - name: Teac
+    - name: Teaching
+      url: /teaching/
+      weight: 6
+
+params:
+  description: "Machine Learning and Signal Processing Lab, University of Houston"
+  author: Saurabh Prasad
+  DateFormat: "January 2006"
+  defaultTheme: light
+  disableThemeToggle: true
+  ShowShareButtons: false
+  ShowReadingTime: false
+  disableSpecial1stPost: true
+  disableAnchoredHeadings: true
+  ShowPostNavLinks: false
+  ShowBreadCrumbs: false
+  ShowCodeCopyButtons: true
+  ShowAllPagesInArchive: false
+  MainSections: ["papers", "books"]
+  ShowToc: false
+  TocOpen: true
+  profileMode:
+    enabled: true
+    title: "Saurabh Prasad"
+    subtitle: "Professor of ECE · University of Houston · IEEE GRSS Distinguished Lecturer"
+    imageUrl: "picture.jpeg"
+    imageWidth: 120
+    imageHeight: 120
+    imageTitle: "Saurabh Prasad"
+    buttons:
+      - name: Papers
+        url: /papers/
+      - name: Research
+        url: /research/
+      - name: Team
+        url: /team/
+  assets:
+    disableScrollBarStyle: true
+  cover:
+    hiddenInList: false
+    hiddenInSingle: true
+  label:
+    text: "Saurabh Prasad"
+  socialIcons:
+    - name: Email
+      url: mailto:sprasad2@uh.edu
+    - name: Google Scholar
+      url: https://scholar.google.com/citations?user=g_FRerIAAAAJ
+    - name: LinkedIn
+      url: https://www.linkedin.com/in/saurabh-prasad-2675a217/
+    - name: GitHub
+      url: https://github.com/PrasadLab
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    guessSyntax: true
+    style: autumn
+  tableOfContents:
+    endLevel: 2
+    startLevel: 2
