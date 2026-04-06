@@ -1,0 +1,4 @@
+.profile-mode .profile img {
+    object-fit: cover;
+    object-position: center top;
+}
