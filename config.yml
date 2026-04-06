@@ -51,14 +51,7 @@ params:
   profileMode:
     enabled: true
     title: "Saurabh Prasad"
-  subtitle: >-
-      Full Professor & Director, Machine Learning and Signal Processing (MLSP) Laboratory · 
-      Electrical & Computer Engineering, University of Houston.
-      IEEE GRSS Distinguished Lecturer · Senior Member, IEEE.
-      Area Chair: ICLR, ECCV · Organizer: GeoCV @ WACV, MORSE @ CVPR.
-      Research in machine learning for geospatial imaging (GeoAI) and biomedicine — 
-      foundation models, large vision models, parameter-efficient fine-tuning, active learning, and multi-sensor image analysis.
-      Funding: NASA · NSF · NIH · DoD · Amazon AWS.
+    subtitle: "Full Professor & Director, Machine Learning and Signal Processing (MLSP) Laboratory, Electrical & Computer Engineering, University of Houston. IEEE GRSS Distinguished Lecturer. Senior Member, IEEE. Area Chair: ICLR, ECCV. Organizer: GeoCV @ WACV, MORSE @ CVPR. Research in machine learning for geospatial imaging (GeoAI) and biomedicine: foundation models, large vision models, parameter-efficient fine-tuning, active learning, and multi-sensor image analysis. Funding: NASA, NSF, NIH, DoD, Amazon AWS."
     imageUrl: "picture.jpeg"
     imageWidth: 200
     imageHeight: 200
@@ -74,6 +67,8 @@ params:
         url: /team/
       - name: News
         url: /news/
+      - name: Teaching
+        url: /teaching/
   assets:
     disableScrollBarStyle: true
   cover:
