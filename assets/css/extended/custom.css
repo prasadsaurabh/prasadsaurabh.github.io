@@ -1,6 +1,7 @@
 .profile-mode .profile img {
     object-fit: cover;
     object-position: center top;
+    border-radius: 6px !important;
 }
 
 /* Force header to show on profile/homepage */
