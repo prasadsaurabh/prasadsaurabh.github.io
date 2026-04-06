@@ -7,7 +7,6 @@ description: "Courses taught by Prof. Saurabh Prasad at the University of Housto
 
 **Department of Electrical and Computer Engineering**
 
-- **ECE 3317 — Applied Electromagnetic Waves**
 - **ECE 6397 — Machine Learning for Signal Processing and Image Analysis**
 - **ECE 6397 — Deep Learning for Computer Vision**
 
