@@ -53,8 +53,8 @@ params:
     title: "Saurabh Prasad"
     subtitle: "Professor of ECE · University of Houston · IEEE GRSS Distinguished Lecturer"
     imageUrl: "picture.jpeg"
-    imageWidth: 120
-    imageHeight: 120
+    imageWidth: 200
+    imageHeight: 200
     imageTitle: "Saurabh Prasad"
     buttons:
       - name: Papers
