@@ -3,14 +3,21 @@
     object-position: center top;
 }
 
-.nav {
+/* Force header to show on profile/homepage */
+.profile-mode .header {
+    display: block !important;
+    position: relative;
+}
+
+.profile-mode .nav {
     display: flex !important;
 }
 
-header {
-    display: block !important;
+.profile-mode #menu {
+    display: flex !important;
+    list-style: none;
 }
 
-.logo {
+.profile-mode .logo {
     display: block !important;
 }
