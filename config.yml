@@ -62,10 +62,14 @@ params:
     buttons:
       - name: Papers
         url: /papers/
+      - name: Books
+        url: /books/
       - name: Research
         url: /research/
       - name: Team
         url: /team/
+      - name: News
+        url: /news/
   assets:
     disableScrollBarStyle: true
   cover:
