@@ -48,27 +48,9 @@ params:
   MainSections: ["papers", "books"]
   ShowToc: false
   TocOpen: true
-  profileMode:
-    enabled: true
-    title: "Saurabh Prasad"
-    subtitle: "I am a Full Professor of Electrical & Computer Engineering at the University of Houston, where I direct the Machine Learning and Signal Processing (MLSP) Laboratory. My research focuses on machine learning for geospatial imaging (GeoAI) and biomedicine, with emphasis on foundation models, active learning, and multi-sensor image analysis."
-    imageUrl: "picture.jpeg"
-    imageWidth: 200
-    imageHeight: 200
-    imageTitle: "Saurabh Prasad"
-    buttons:
-      - name: Papers
-        url: /papers/
-      - name: Books
-        url: /books/
-      - name: Research
-        url: /research/
-      - name: Team
-        url: /team/
-      - name: News
-        url: /news/
-      - name: Teaching
-        url: /teaching/
+  homeInfoParams:
+    Title: "Saurabh Prasad"
+    Content: ""
   assets:
     disableScrollBarStyle: true
   cover:
