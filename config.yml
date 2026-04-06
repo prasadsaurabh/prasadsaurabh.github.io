@@ -48,24 +48,6 @@ params:
   MainSections: ["papers", "books"]
   ShowToc: false
   TocOpen: true
-  profileMode:
-    enabled: true
-    title: "Saurabh Prasad"
-    subtitle: >-
-      Professor of ECE · University of Houston · IEEE GRSS Distinguished Lecturer.
-      Research in GeoAI, foundation models, active learning, and biomedical imaging.
-      Supported by NASA, NSF, NIH, DoD, and Amazon AWS.
-    imageUrl: "picture.jpeg"
-    imageWidth: 200
-    imageHeight: 200
-    imageTitle: "Saurabh Prasad"
-    buttons:
-      - name: Papers
-        url: /papers/
-      - name: Research
-        url: /research/
-      - name: Team
-        url: /team/
   assets:
     disableScrollBarStyle: true
   cover:
