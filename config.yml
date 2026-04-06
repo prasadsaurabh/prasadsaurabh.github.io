@@ -51,7 +51,10 @@ params:
   profileMode:
     enabled: true
     title: "Saurabh Prasad"
-    subtitle: "Professor of ECE · University of Houston · IEEE GRSS Distinguished Lecturer"
+    subtitle: >-
+      Professor of ECE · University of Houston · IEEE GRSS Distinguished Lecturer.
+      Research in GeoAI, foundation models, active learning, and biomedical imaging.
+      Supported by NASA, NSF, NIH, DoD, and Amazon AWS.
     imageUrl: "picture.jpeg"
     imageWidth: 200
     imageHeight: 200
