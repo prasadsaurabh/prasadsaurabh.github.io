@@ -56,6 +56,8 @@ params:
     hiddenInSingle: true
   label:
     text: "Saurabh Prasad"
+    icon: /favicon.ico
+    iconHeight: 35
   socialIcons:
     - name: Email
       url: mailto:sprasad2@uh.edu
