@@ -13,7 +13,7 @@ tags:
   - "Semi-supervised Learning"
   - "Siamese Networks"
 summary: >-
-  We present a spatial-spectral semisupervised deep learning framework using Siamese networks with angular loss for hyperspectral image analysis, effectively leveraging both labeled and unlabeled data through contrastive learning with spatial-spectral constraints.
+  **CVIU 2020** · We present a spatial-spectral semisupervised deep learning framework using Siamese networks with angular loss for hyperspectral image analysis, effectively leveraging both labeled and unlabeled data through contrastive learning with spatial-spectral constraints.
 
 links:
   - name: Link
@@ -33,7 +33,7 @@ links:
 ```BibTeX
 @article{Mukherjee2020,
   author = {Mukherjee, Souvick and Prasad, Saurabh},
-  title = {A Spatial-Spectral Semisupervised Deep Learning Framework Using Siamese Networks and Angular Loss},
+  title = {A Spatial-Spectral Semisupervised Deep Learning Framework},
   journal = {Computer Vision and Image Understanding},
   year = {2020}
 }

@@ -14,7 +14,7 @@ tags:
   - "Vision Transformers"
   - "GeoAI"
 summary: >-
-  We propose a CNN-Mixer hierarchical spectral transformer architecture for hyperspectral image classification, combining convolutional feature extraction with spectral attention mechanisms in a hierarchical framework.
+  **IGARSS 2023** · We propose a CNN-Mixer hierarchical spectral transformer architecture for hyperspectral image classification, combining convolutional feature extraction with spectral attention mechanisms in a hierarchical framework.
 
 links:
   - name: Link
@@ -34,7 +34,7 @@ links:
 ```BibTeX
 @InProceedings{Liu2023,
   author = {Liu, Wei and Prasad, Saurabh and Crawford, Melba},
-  title = {CNN-Mixer Hierarchical Spectral Transformer for Hyperspectral Image Classification},
+  title = {CNN-Mixer Hierarchical Spectral Transformer},
   booktitle = {IEEE IGARSS},
   year = {2023}
 }

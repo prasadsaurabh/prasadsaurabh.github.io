@@ -14,7 +14,7 @@ tags:
   - "Vision Transformers"
   - "GeoAI"
 summary: >-
-  We systematically investigate the design choices and their impact on hierarchical spectral vision transformer architectures for hyperspectral image classification, providing insights into optimal spatial-spectral attention configurations and pre-training strategies.
+  **IEEE TGRS 2024** · We systematically investigate the design choices and their impact on hierarchical spectral vision transformer architectures for hyperspectral image classification, providing insights into optimal spatial-spectral attention configurations and pre-training strategies.
 
 links:
   - name: Link
@@ -34,8 +34,8 @@ links:
 ```BibTeX
 @article{Liu2024,
   author = {Liu, Wei and Prasad, Saurabh and Crawford, Melba},
-  title = {Investigation of Hierarchical Spectral Vision Transformer Architecture for Classification of Hyperspectral Imagery},
-  journal = {IEEE Transactions on Geoscience and Remote Sensing},
+  title = {Investigation of Hierarchical Spectral Vision Transformer Architecture},
+  journal = {IEEE TGRS},
   year = {2024}
 }
 ```

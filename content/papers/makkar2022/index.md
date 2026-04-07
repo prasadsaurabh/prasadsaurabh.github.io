@@ -14,7 +14,7 @@ tags:
   - "Adversarial Learning"
   - "GeoAI"
 summary: >-
-  We present an adversarial learning framework for discriminative domain adaptation in geospatial image analysis, enabling effective knowledge transfer across different sensors, geographic regions, and imaging conditions without requiring extensive labeled target domain data.
+  **IEEE JSTARS 2022** · We present an adversarial learning framework for discriminative domain adaptation in geospatial image analysis, enabling effective knowledge transfer across different sensors, geographic regions, and imaging conditions without requiring extensive labeled target domain data.
 
 links:
   - name: Link
@@ -34,8 +34,8 @@ links:
 ```BibTeX
 @article{Makkar2022,
   author = {Makkar, Nikhil and Yang, Lexie and Prasad, Saurabh},
-  title = {Adversarial Learning Based Discriminative Domain Adaptation for Geospatial Image Analysis},
-  journal = {IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing},
+  title = {Adversarial Learning Based Discriminative Domain Adaptation},
+  journal = {IEEE JSTARS},
   volume = {15},
   year = {2022}
 }
