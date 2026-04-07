@@ -32,7 +32,7 @@ description: "Members of the MLSP Laboratory at the University of Houston"
 
 ## Collaborators
 
-Our projects include collaborators at Purdue University, UCLA, Grenoble Institute of Technology, Oak Ridge National Lab (ORNL), INRIA, NIH, and Amazon AWS.
+Our projects include collaborators at Purdue University, UCLA, Grenoble Institute of Technology, NASA, Oak Ridge National Lab (ORNL), INRIA, NIH, and Amazon AWS.
 
 ---
 
