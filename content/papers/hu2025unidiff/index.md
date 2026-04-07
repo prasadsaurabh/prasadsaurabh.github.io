@@ -6,7 +6,7 @@ authors:
   - Yuzhen Hu
   - Saurabh Prasad
 publication: >-
-  ICML Terrabytes Workshop 2025 (Spotlight Paper)
+  WACV 2026 (Main Conference Paper)
 tags:
   - "ICML Terrabytes 2025 (Spotlight)"
   - "Diffusion Models"
