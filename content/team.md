@@ -9,7 +9,7 @@ description: "Members of the MLSP Laboratory at the University of Houston"
 
 ---
 
-## Current Graduate Students
+## Current/Recent Graduate Students
 
 | Name | Degree |
 |------|--------|
@@ -21,7 +21,7 @@ description: "Members of the MLSP Laboratory at the University of Houston"
 
 ---
 
-## Current Undergraduate Students
+## Current/Recent Undergraduate Students
 
 | Name | Degree |
 |------|--------|
