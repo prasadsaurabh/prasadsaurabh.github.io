@@ -33,7 +33,7 @@ menu:
 
 params:
   description: "Machine Learning and Signal Processing Lab, University of Houston"
-  author: Saurabh Prasad
+  author: 
   DateFormat: "January 2006"
   defaultTheme: light
   disableThemeToggle: true
