@@ -11,14 +11,22 @@ description: "Members of the MLSP Laboratory at the University of Houston"
 
 ## Current Graduate Students
 
-| Name | Degree | Research Focus |
-|------|--------|----------------|
-| Student 1 | PhD Candidate (ECE) | Transfer Learning with Deep Networks |
-| Student 2 | PhD Candidate (ECE) | Active Deep Learning |
-| Student 3 | MS Candidate (Data Science) | Denoising Diffusion Models in GeoAI |
-| Student 4 | MS Candidate (Data Science) | Meta-Learned Segmentation Networks for GeoAI |
-| Student 5 | Co-mentored PhD (Purdue ECE) | Vision Transformers, Loss Landscape Analysis |
-| Student 6 | Co-mentored PhD (Purdue ECE) | Image Super-Resolution for GeoAI |
+| Name | Degree |
+|------|--------|
+| Ryan Faulkenberry | PhD Student |
+| Aaron Perez | PhD Student |
+| Wei Liu (Co-Mentored with Prof. Crawford at Purdue) | PhD Student at Purdue University |
+| Nathan Touchet | M.S. Student |
+| Yuzhen Hu | M.S. Student |
+
+---
+
+## Current Undergraduate Students
+
+| Name | Degree |
+|------|--------|
+| Furqan Ahcom | B.S. Student |
+| Joshua Lee (Visiting UT-Austin) | B.S. Student |
 
 ---
 
