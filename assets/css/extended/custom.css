@@ -14,9 +14,10 @@
     outline: none !important;
     box-shadow: none !important;
 }
-/* Limit book/paper cover image height in list view */
-.post-cover img {
-    max-height: 100px !important;
-    width: auto !important;
-    object-fit: contain !important;
+/* Limit cover image size in list view */
+.entry-cover img,
+.entry-cover {
+    max-height: 280px !important;
+    object-fit: cover !important;
+    overflow: hidden !important;
 }
