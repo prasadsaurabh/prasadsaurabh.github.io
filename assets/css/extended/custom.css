@@ -14,3 +14,9 @@
     outline: none !important;
     box-shadow: none !important;
 }
+/* Limit book/paper cover image height in list view */
+.post-cover img {
+    max-height: 300px !important;
+    width: auto !important;
+    object-fit: contain !important;
+}
