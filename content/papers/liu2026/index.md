@@ -19,6 +19,11 @@ summary: >-
 links:
   - name: Link
     url: 'https://ieeexplore.ieee.org/abstract/document/10681548'
+cover:
+  image: "cover.png"
+  alt: "DINO Soars paper figure"
+  relative: true
+  hiddenInList: false
 ---
 
 ---
