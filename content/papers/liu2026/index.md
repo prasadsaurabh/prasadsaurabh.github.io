@@ -30,7 +30,7 @@ cover:
 
 ##### Download
 
-- Available via link above
+- Paper (https://ieeexplore.ieee.org/abstract/document/10681548)
 
 ---
 
