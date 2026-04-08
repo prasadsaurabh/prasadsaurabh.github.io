@@ -19,6 +19,11 @@ url_pdf: 'https://arxiv.org/pdf/2505.01558'
 links:
   - name: Link
     url: 'https://arxiv.org/abs/2505.01558'
+cover:
+  image: "cover.png"
+  alt: "FM_DA figure"
+  relative: true
+  hiddenInList: false
 ---
 
 ---

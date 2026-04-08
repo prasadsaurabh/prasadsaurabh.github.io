@@ -18,6 +18,11 @@ url_pdf: 'https://arxiv.org/pdf/2512.00261'
 links:
   - name: Link
     url: 'https://arxiv.org/abs/2512.00261'
+cover:
+  image: "cover.png"
+  alt: "Unidiff figure"
+  relative: true
+  hiddenInList: false
 ---
 
 ---

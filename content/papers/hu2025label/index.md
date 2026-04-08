@@ -19,6 +19,11 @@ summary: >-
 links:
   - name: Link
     url: 'https://openreview.net/forum?id=l9wTrSu9i9'
+cover:
+  image: "cover.png"
+  alt: "SpectralDIff figure"
+  relative: true
+  hiddenInList: false
 ---
 
 ---
