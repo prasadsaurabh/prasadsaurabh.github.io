@@ -27,6 +27,12 @@ url_pdf: 'https://arxiv.org/pdf/2512.11745'
 links:
   - name: Link
     url: 'https://www.nature.com/articles/s41598-026-40620-5'
+cover:
+  image: "cover.png"
+  alt: "mVISE figure"
+  relative: true
+  hiddenInList: false
+    
 ---
 
 ---
