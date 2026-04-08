@@ -18,6 +18,6 @@
 .entry-cover img,
 .entry-cover {
     max-height: 280px !important;
-    object-fit: cover !important;
+    object-fit: contain !important;
     overflow: hidden !important;
 }
