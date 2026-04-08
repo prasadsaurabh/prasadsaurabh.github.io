@@ -1,3 +1,9 @@
+cover:
+  image: "cover.png"
+  alt: "Book cover"
+  relative: true
+  hiddenInList: false
+  
 ---
 title: "Advances in Machine Learning and Image Analysis for GeoAI"
 date: 2024-06-01
