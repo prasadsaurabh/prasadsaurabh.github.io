@@ -18,6 +18,11 @@ url_pdf: 'https://openaccess.thecvf.com/content/WACV2026W/GeoCV/papers/Faulkenbe
 links:
   - name: Link
     url: 'https://openaccess.thecvf.com/content/WACV2026W/GeoCV/html/Faulkenberry_Gradient-Based_Active_Learning_for_Geospatial_Semantic_Segmentation_with_Large_Vision_WACVW_2026_paper.html'
+cover:
+  image: "cover.png"
+  alt: "Active Learning with LVMs figure"
+  relative: true
+  hiddenInList: false
 ---
 
 ---
