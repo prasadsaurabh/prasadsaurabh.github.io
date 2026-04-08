@@ -18,6 +18,11 @@ summary: >-
 links:
   - name: Code
     url: 'https://github.com/rfaulk/DINO_Soars'
+cover:
+  image: "cover.png"
+  alt: "DINO Soars paper figure"
+  relative: true
+  hiddenInList: false
 ---
 
 ---
