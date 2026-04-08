@@ -1,3 +1,9 @@
+cover:
+  image: "cover.png"
+  alt: "Book cover"
+  relative: true
+  hiddenInList: false
+  
 ---
 title: "Hyperspectral Image Analysis: Advances in Machine Learning and Signal Processing"
 date: 2020-01-01
