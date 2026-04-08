@@ -14,10 +14,19 @@
     outline: none !important;
     box-shadow: none !important;
 }
-/* Limit cover image size in list view */
-.entry-cover img,
+/* Resize book/paper covers without cropping */
+.entry-cover img {
+    max-height: 280px !important;
+    width: auto !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+    margin: 0 auto !important;
+    display: block !important;
+}
+
 .entry-cover {
     max-height: 280px !important;
-    object-fit: contain !important;
     overflow: hidden !important;
+    display: flex !important;
+    justify-content: center !important;
 }
