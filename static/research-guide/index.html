@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research Student Guide — University of Houston ECE</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,500&family=Inter:wght@400;500;600;700&display=swap');
+
+:root{
+  --red:#C8102E;
+  --red-dark:#76232F;
+  --ink:#1B1918;
+  --ink-soft:#4A4744;
+  --gray:#888B8D;
+  --gray-line:#E4E1DC;
+  --paper:#FFFFFF;
+  --paper-tint:#FAF9F7;
+  --serif:'Source Serif 4', Georgia, serif;
+  --sans:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  font-family:var(--sans);
+  color:var(--ink);
+  background:var(--ink);
+  overflow:hidden;
+  height:100vh;
+  width:100vw;
+}
+
+/* ---------- Chrome ---------- */
+.app{
+  position:relative;
+  height:100vh;
+  width:100vw;
+  background:var(--paper);
+  display:flex;
+  flex-direction:column;
+}
+
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 28px;
+  border-bottom:1px solid var(--gray-line);
+  flex:0 0 auto;
+  background:var(--paper);
+  z-index:20;
+}
+.topbar-brand{
+  font-family:var(--sans);
+  font-weight:700;
+  font-size:13px;
+  letter-spacing:0.06em;
+  color:var(--ink);
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.topbar-brand .of{color:var(--gray); font-weight:400; text-transform:lowercase;}
+.topbar-brand .red{color:var(--red);}
+.topbar-brand .pipe{color:var(--gray-line); margin:0 4px; font-weight:300;}
+.topbar-brand .deck-name{color:var(--gray); font-weight:500; margin-left:8px; letter-spacing:0.02em;}
+
+.topbar-right{display:flex; align-items:center; gap:18px;}
+.slide-counter{font-size:13px; color:var(--gray); font-variant-numeric:tabular-nums; letter-spacing:0.02em;}
+.menu-btn{
+  border:1px solid var(--gray-line);
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:12.5px;
+  font-weight:600;
+  letter-spacing:0.04em;
+  padding:7px 14px;
+  border-radius:3px;
+  cursor:pointer;
+  transition:all .15s ease;
+}
+.menu-btn:hover{border-color:var(--red); color:var(--red);}
+
+.progress-track{height:2px; width:100%; background:var(--gray-line); flex:0 0 auto;}
+.progress-fill{height:100%; background:var(--red); width:0%; transition:width .35s ease;}
+
+/* ---------- Stage ---------- */
+.stage{
+  flex:1 1 auto;
+  position:relative;
+  overflow:hidden;
+  background:var(--paper-tint);
+}
+.slide{
+  position:absolute;
+  top:0; left:0; right:0; bottom:0;
+  display:flex;
+  flex-direction:column;
+  background:var(--paper);
+  opacity:0;
+  visibility:hidden;
+  transform:translateX(24px);
+  transition:opacity .38s ease, transform .38s ease;
+  overflow-y:auto;
+}
+.slide.active{
+  opacity:1;
+  visibility:visible;
+  transform:translateX(0);
+  z-index:5;
+}
+.slide.leaving-back{transform:translateX(-24px);}
+
+.slide-inner{
+  max-width:1180px;
+  width:100%;
+  margin:0 auto;
+  padding:64px 72px 80px;
+  flex:1 1 auto;
+}
+
+/* ---------- Typography ---------- */
+.kicker{
+  display:flex; align-items:center; gap:10px;
+  font-family:var(--sans);
+  font-size:12.5px;
+  font-weight:700;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--red);
+  margin-bottom:18px;
+}
+.kicker.light{color:#E8AAB2;}
+.kicker-n{color:var(--gray); font-weight:600;}
+.kicker.light .kicker-n{color:rgba(255,255,255,0.55);}
+.kicker-sep{color:var(--gray-line); font-weight:400;}
+.kicker.light .kicker-sep{color:rgba(255,255,255,0.3);}
+.kicker-s{color:var(--ink-soft);}
+.kicker.light .kicker-s{color:rgba(255,255,255,0.85);}
+
+.slide-title{
+  font-family:var(--serif);
+  font-weight:600;
+  font-size:44px;
+  line-height:1.12;
+  letter-spacing:-0.01em;
+  margin:0 0 22px;
+  color:var(--ink);
+  max-width:920px;
+}
+
+.lead-line{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:20px;
+  color:var(--ink-soft);
+  margin:0 0 20px;
+  max-width:820px;
+  line-height:1.45;
+}
+.lead-line.big{font-size:24px;}
+.sublead-line{font-size:14px; color:var(--gray); margin:-14px 0 20px;}
+
+.body-col{max-width:760px;}
+.body-col.narrow{max-width:680px;}
+.body-p{font-size:16.5px; line-height:1.65; color:var(--ink-soft); margin:0 0 14px;}
+.body-h4{font-family:var(--sans); font-size:13px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:var(--red-dark); margin:22px 0 10px;}
+.body-h4:first-child{margin-top:0;}
+.body-note{font-size:13.5px; color:var(--gray); line-height:1.55; margin:10px 0; padding-left:14px; border-left:2px solid var(--gray-line);}
+.body-link{margin:6px 0 14px;}
+.body-address{font-size:15px; color:var(--ink-soft); line-height:1.7; margin:10px 0;}
+.footer-line{font-family:var(--serif); font-style:italic; font-size:18px; color:var(--red-dark); margin-top:26px;}
+
+.inline-link, .ref-link{color:var(--red-dark); text-decoration:none; border-bottom:1px solid rgba(118,35,47,0.3); word-break:break-word;}
+.inline-link:hover, .ref-link:hover{border-bottom-color:var(--red-dark);}
+
+.body-ul{margin:0 0 16px; padding:0; list-style:none;}
+.body-ul li{
+  position:relative; padding-left:20px; margin-bottom:11px;
+  font-size:16px; line-height:1.6; color:var(--ink-soft);
+}
+.body-ul li::before{
+  content:"";
+  position:absolute; left:0; top:9px;
+  width:6px; height:6px; border-radius:50%;
+  background:var(--red);
+}
+.body-ul.compact li{font-size:14.5px; margin-bottom:8px;}
+
+.body-steps{margin:8px 0 16px 0; padding-left:22px; counter-reset:step;}
+.body-steps li{font-size:15.5px; line-height:1.6; color:var(--ink-soft); margin-bottom:12px; padding-left:6px;}
+.body-steps li::marker{color:var(--red); font-weight:700;}
+
+.term-list{margin:10px 0 16px;}
+.term-row{margin-bottom:12px; font-size:15.5px; line-height:1.55;}
+.term{color:var(--ink); font-weight:600; margin-right:6px;}
+.term-desc{color:var(--ink-soft);}
+
+/* ---------- Cover / Closing ---------- */
+.cover-slide{padding:0; overflow:hidden;}
+.cover-bg{position:absolute; top:0; left:0; right:0; bottom:0;}
+.cover-mosaic{
+  position:absolute; top:0; left:0; right:0; bottom:0;
+  filter:saturate(0.72) brightness(0.78) contrast(1.06);
+}
+.cm-tile{position:absolute; background-size:cover; background-position:center; box-shadow:inset 0 0 0 1px rgba(255,255,255,0.05);}
+.cm-a{left:0%;    top:0%;   width:37.1%; height:58%;}
+.cm-b{left:37.1%; top:0%;   width:32.3%; height:58%;}
+.cm-c{left:69.4%; top:0%;   width:30.6%; height:58%;}
+.cm-d{left:0%;    top:58%;  width:69.4%; height:42%;}
+.cm-e{left:69.4%; top:58%;  width:30.6%; height:42%;}
+.cover-scrim{position:absolute; top:0; left:0; right:0; bottom:0; background:linear-gradient(100deg, rgba(12,10,9,0.97) 0%, rgba(14,11,10,0.90) 30%, rgba(16,12,11,0.62) 58%, rgba(18,13,12,0.30) 82%, rgba(20,15,13,0.22) 100%);}
+.cover-tint{position:absolute; top:0; left:0; right:0; bottom:0; background:#2a0e14; mix-blend-mode:color; opacity:0.55;}
+.cover-scrim.solid{background:linear-gradient(135deg, #201313 0%, #1B1918 60%);}
+.closing-slide .cover-bg{display:none;}
+.cover-content{position:relative; z-index:2; height:100%; display:flex; flex-direction:column; justify-content:center; padding:0 100px; max-width:900px;}
+.cover-wordmark{font-family:var(--sans); font-weight:700; font-size:14px; letter-spacing:0.08em; color:#fff; margin-bottom:56px; opacity:0.92;}
+.cover-wordmark .of{color:#c9c6c2; font-weight:400; text-transform:lowercase; margin:0 4px;}
+.cover-wordmark .red{color:#FF5C6C;}
+.cover-wordmark .pipe{color:rgba(255,255,255,0.3); margin:0 8px; font-weight:300;}
+.cover-pretitle{font-family:var(--serif); font-style:italic; font-size:22px; color:#D9AFB4; margin:0 0 6px;}
+.cover-title{font-family:var(--serif); font-weight:600; font-size:68px; line-height:1.05; color:#fff; margin:0 0 22px; letter-spacing:-0.01em;}
+.cover-subtitle{font-family:var(--sans); font-size:16px; letter-spacing:0.06em; text-transform:uppercase; color:rgba(255,255,255,0.6); margin:0 0 48px;}
+.cover-presenter{display:flex; flex-direction:column; gap:4px; border-top:1px solid rgba(255,255,255,0.2); padding-top:20px; width:fit-content;}
+.cp-name{font-family:var(--serif); font-size:19px; color:#fff;}
+.cp-role{font-family:var(--sans); font-size:13px; color:rgba(255,255,255,0.55); letter-spacing:0.02em;}
+.cover-footnote{font-size:12.5px;line-height:1.5;color:rgba(255,255,255,0.55);max-width:760px;margin-top:28px;border-top:1px solid rgba(255,255,255,0.16);padding-top:14px;}
+.cover-footnote em{color:rgba(255,255,255,0.72);}
+.closing-message{font-family:var(--serif); font-style:italic; font-size:24px; line-height:1.5; color:rgba(255,255,255,0.88); max-width:640px; margin-top:8px;}
+
+/* ---------- Outline ---------- */
+.outline-grid{display:grid; grid-template-columns:1fr 1fr; gap:0 60px; margin-top:20px;}
+.outline-col{list-style:none; margin:0; padding:0;}
+.outline-col li{display:flex; align-items:baseline; gap:16px; padding:16px 0; border-bottom:1px solid var(--gray-line);}
+.ol-n{font-family:var(--serif); font-size:15px; color:var(--red); font-weight:600; min-width:22px;}
+.ol-t{font-size:17px; color:var(--ink); font-family:var(--serif);}
+
+/* ---------- Profile ---------- */
+.profile-inner{display:grid; grid-template-columns:1.25fr 0.9fr; gap:56px; align-items:center;}
+.profile-lead{font-family:var(--serif); font-style:italic; font-size:19px; color:var(--red-dark); margin:0 0 16px;}
+.profile-card{margin-top:22px; padding-top:18px; border-top:1px solid var(--gray-line);}
+.profile-name{font-family:var(--serif); font-weight:600; font-size:22px; color:var(--ink);}
+.profile-meta{font-size:13.5px; color:var(--gray); margin-top:4px; letter-spacing:0.02em;}
+.profile-contact{font-size:14.5px; color:var(--ink-soft); margin-top:10px; line-height:1.7;}
+.profile-photo{display:flex; justify-content:center;}
+.photo-frame{
+  width:100%; max-width:320px; aspect-ratio:4/5;
+  overflow:hidden; border-radius:2px;
+  box-shadow:0 22px 44px -18px rgba(27,25,24,0.35);
+  background:var(--paper-tint);
+}
+.photo-frame.wide{aspect-ratio:16/10; max-width:none;}
+.photo-frame img{width:100%; height:100%; object-fit:cover; display:block;}
+
+/* ---------- Link list ---------- */
+.link-list{list-style:none; margin:18px 0 0; padding:0; max-width:820px;}
+.link-list li{display:flex; justify-content:space-between; align-items:baseline; gap:24px; padding:13px 0; border-bottom:1px solid var(--gray-line);}
+.ll-label{font-family:var(--serif); font-size:16.5px; color:var(--ink); flex:0 0 auto; min-width:220px;}
+.ll-url{font-size:13.5px; color:var(--gray); text-align:right; word-break:break-word;}
+.ll-url .inline-link{color:var(--gray); border-bottom-color:var(--gray-line);}
+
+/* ---------- Screenshot layout ---------- */
+.ss-inner{display:grid; grid-template-columns:1fr 0.95fr; gap:52px; align-items:start;}
+.ss-inner.reverse{grid-template-columns:0.85fr 1.15fr;}
+.browser-card{
+  border-radius:8px; overflow:hidden; border:1px solid var(--gray-line);
+  box-shadow:0 30px 60px -26px rgba(27,25,24,0.28);
+  background:#fff;
+}
+.browser-bar{background:#F1EFEC; padding:9px 12px; display:flex; gap:6px;}
+.bdot{width:9px; height:9px; border-radius:50%; background:#DAD6D0;}
+.browser-card img{width:100%; display:block;}
+.browser-card.small{max-width:420px;}
+.shot-caption{font-size:12.5px; color:var(--gray); margin-top:10px; text-align:center; letter-spacing:0.02em;}
+.dual-shots{display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:16px;}
+
+/* ---------- Date list ---------- */
+.date-list{list-style:none; margin:22px 0 0; padding:0; max-width:760px;}
+.date-list li{display:flex; justify-content:space-between; align-items:baseline; padding:16px 0; border-bottom:1px solid var(--gray-line); gap:20px;}
+.dl-label{font-size:16px; color:var(--ink-soft);}
+.dl-date{font-family:var(--serif); font-weight:600; font-size:17px; color:var(--red-dark); white-space:nowrap;}
+
+/* ---------- Course grid ---------- */
+.course-grid{
+  display:grid; grid-template-columns:1fr 1fr; gap:6px 28px; margin-top:18px;
+}
+.course-cell{font-size:12.8px; color:var(--ink-soft); padding:7px 0; border-bottom:1px dotted var(--gray-line); font-family:var(--sans);}
+
+/* ---------- Specialization table ---------- */
+.special-table{margin-top:18px; border-top:1px solid var(--ink);}
+.st-head{display:grid; grid-template-columns:1fr 1fr; padding:10px 0; font-size:11.5px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--gray); border-bottom:1px solid var(--gray-line);}
+.st-row{display:grid; grid-template-columns:1fr 1fr; padding:11px 0; border-bottom:1px solid var(--gray-line); align-items:baseline;}
+.st-area{font-family:var(--serif); font-size:15.5px; color:var(--ink);}
+.st-coord{font-size:14px; color:var(--ink-soft);}
+
+/* ---------- Specialization detail ---------- */
+.area-banner{
+  display:flex; justify-content:space-between; align-items:baseline;
+  background:var(--paper-tint); border-left:3px solid var(--red);
+  padding:14px 20px; margin-bottom:24px;
+}
+.area-name{font-family:var(--serif); font-weight:600; font-size:20px; color:var(--ink);}
+.area-hours{font-size:13px; color:var(--gray); letter-spacing:0.02em;}
+.spec-columns{display:grid; grid-template-columns:0.75fr 1.25fr; gap:44px;}
+.elec-table{margin-top:4px;}
+.elec-row{margin-bottom:10px; font-size:13.8px; line-height:1.55;}
+.elec-cat{display:block; font-weight:700; color:var(--red-dark); font-size:12px; letter-spacing:0.03em; text-transform:uppercase; margin-bottom:2px;}
+.elec-courses{color:var(--ink-soft);}
+
+/* ---------- Equations ---------- */
+.eq-grid{display:grid; grid-template-columns:1fr 1fr; gap:28px; margin-top:16px;}
+.eq-card{background:var(--paper-tint); border:1px solid var(--gray-line); padding:22px; border-radius:4px;}
+.eq-img{margin-top:12px; background:#fff; border-radius:3px; padding:14px; display:flex; align-items:center; justify-content:center; min-height:70px;}
+.eq-img img{max-width:100%;}
+
+/* ---------- References ---------- */
+.ref-list{list-style:none; margin:20px 0 0; padding:0; max-width:840px; counter-reset:none;}
+.ref-list li{display:flex; gap:14px; padding:12px 0; border-bottom:1px solid var(--gray-line);}
+.ref-n{color:var(--red); font-weight:700; font-size:13.5px; flex:0 0 auto;}
+.ref-t{font-size:14.5px; color:var(--ink-soft); line-height:1.6;}
+
+/* ---------- Section divider ---------- */
+.section-slide{position:relative; padding:0; background:#1B1918; overflow:hidden;}
+.section-scrim{position:absolute; top:0; left:0; right:0; bottom:0; background:radial-gradient(circle at 78% 30%, rgba(200,16,46,0.28), transparent 55%);}
+.section-inner{position:relative; z-index:2; display:flex; flex-direction:column; justify-content:center; height:100%; max-width:760px;}
+.section-title{font-family:var(--serif); font-weight:600; font-size:64px; color:#fff; margin:0 0 26px; letter-spacing:-0.01em;}
+.body-col.light .body-p{color:rgba(255,255,255,0.75);}
+.body-col.light .body-note{color:rgba(255,255,255,0.5); border-left-color:rgba(255,255,255,0.25);}
+
+/* ---------- Pillars ---------- */
+.pillar-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px 30px; margin-top:22px;}
+.pillar{padding:18px 0; border-bottom:1px solid var(--gray-line);}
+.pillar-main{font-family:var(--serif); font-size:18px; color:var(--ink); font-weight:600;}
+.pillar-sub{font-size:13px; color:var(--gray); margin-top:3px;}
+
+/* ---------- Numbered ethics list ---------- */
+.ethics-list{list-style:none; margin:16px 0 0; padding:0; columns:1;}
+.ethics-list li{display:flex; gap:14px; padding:10px 0; border-bottom:1px solid var(--gray-line); align-items:baseline;}
+.nl-n{font-family:var(--serif); font-style:italic; color:var(--red); font-weight:600; font-size:14px; flex:0 0 18px;}
+.nl-t{font-size:14.5px; line-height:1.55; color:var(--ink-soft);}
+
+/* ---------- Chart slides ---------- */
+.chart-inner{display:flex; flex-direction:column; align-items:flex-start;}
+.chart-card{position:relative; background:var(--paper-tint); border:1px solid var(--gray-line); border-radius:6px; padding:28px; margin-top:6px; max-width:560px;}
+.chart-card img{width:100%; display:block;}
+.chart-caption{font-family:var(--serif); font-style:italic; font-size:16px; color:var(--red-dark); margin-top:16px;}
+.chart-badge{position:absolute; top:-16px; right:-16px; width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-weight:700; font-size:20px; box-shadow:0 8px 20px -6px rgba(0,0,0,0.3);}
+.chart-badge.q{background:#fff; border:2px solid var(--gray); color:var(--gray);}
+.chart-badge.good{background:var(--red); color:#fff;}
+
+/* ---------- Quote/photo slide ---------- */
+.qp-caption{font-size:12.5px; color:var(--gray); margin-top:10px; text-align:center;}
+
+/* ---------- Tips ---------- */
+.tips-list{list-style:none; margin:22px 0 0; padding:0; max-width:760px;}
+.tips-list li{display:flex; align-items:flex-start; gap:16px; padding:15px 0; border-bottom:1px solid var(--gray-line);}
+.tip-check{
+  flex:0 0 auto; width:24px; height:24px; border-radius:50%;
+  background:var(--red); color:#fff; font-size:13px;
+  display:flex; align-items:center; justify-content:center; font-weight:700;
+}
+.tip-t{font-size:16.5px; color:var(--ink-soft); line-height:1.5; padding-top:2px; font-family:var(--serif);}
+
+/* ---------- Bottom nav ---------- */
+.bottombar{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 28px; border-top:1px solid var(--gray-line);
+  flex:0 0 auto; background:var(--paper); z-index:20;
+}
+.nav-btn{
+  display:flex; align-items:center; gap:8px;
+  border:1px solid var(--gray-line); background:var(--paper);
+  color:var(--ink); font-family:var(--sans); font-size:13px; font-weight:600;
+  padding:9px 18px; border-radius:3px; cursor:pointer; transition:all .15s ease;
+}
+.nav-btn:hover:not(:disabled){border-color:var(--red); color:var(--red);}
+.nav-btn:disabled{opacity:0.3; cursor:default;}
+.bottombar-section{font-size:12.5px; color:var(--gray); letter-spacing:0.04em; text-transform:uppercase;}
+
+/* ---------- TOC overlay ---------- */
+.toc-overlay{
+  position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(20,18,17,0.72);
+  z-index:100; display:flex; align-items:center; justify-content:center;
+  opacity:0; visibility:hidden; transition:opacity .25s ease;
+  backdrop-filter:blur(3px);
+}
+.toc-overlay.open{opacity:1; visibility:visible;}
+.toc-panel{
+  background:var(--paper); width:min(880px,90vw); max-height:82vh; overflow-y:auto;
+  border-radius:8px; padding:40px 48px; box-shadow:0 40px 80px -20px rgba(0,0,0,0.5);
+}
+.toc-head{display:flex; justify-content:space-between; align-items:center; margin-bottom:24px;}
+.toc-title{font-family:var(--serif); font-size:26px; font-weight:600; margin:0;}
+.toc-close{border:none; background:none; font-size:22px; color:var(--gray); cursor:pointer; line-height:1;}
+.toc-close:hover{color:var(--red);}
+.toc-section{margin-bottom:22px;}
+.toc-section-name{font-size:11.5px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--red); margin-bottom:10px;}
+.toc-items{display:grid; grid-template-columns:1fr 1fr; gap:2px 24px;}
+.toc-item{
+  display:flex; gap:10px; padding:7px 8px; border-radius:3px; cursor:pointer;
+  font-size:14px; color:var(--ink-soft); transition:background .12s ease;
+  align-items:center;
+}
+.toc-item:hover{background:var(--paper-tint); color:var(--ink);}
+.toc-item .tn{color:var(--gray); font-variant-numeric:tabular-nums; min-width:20px;}
+.toc-item-hidden{opacity:0.6;}
+.toc-hidden-badge{
+  margin-left:auto; font-size:10px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase;
+  color:var(--gray); border:1px solid var(--gray-line); border-radius:3px; padding:1px 6px;
+}
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar{width:9px; height:9px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{background:var(--gray-line); border-radius:6px;}
+::-webkit-scrollbar-thumb:hover{background:var(--gray);}
+
+/* ---------- Responsive ---------- */
+@media (max-width:900px){
+  .slide-inner{padding:36px 26px 60px;}
+  .slide-title{font-size:30px;}
+  .cover-title{font-size:40px;}
+  .cover-content{padding:0 32px;}
+  .profile-inner, .ss-inner, .ss-inner.reverse{grid-template-columns:1fr; gap:28px;}
+  .profile-photo{order:-1;}
+  .outline-grid, .spec-columns, .eq-grid, .dual-shots, .course-grid{grid-template-columns:1fr;}
+  .toc-items{grid-template-columns:1fr;}
+  .section-title{font-size:38px;}
+}
+
+</style>
+
+<style>
+.source-note{font-size:12.2px;color:var(--gray);line-height:1.55;margin-top:24px;max-width:880px;border-top:1px solid var(--gray-line);padding-top:12px;}
+.callout{background:var(--paper-tint);border-left:3px solid var(--red);padding:16px 20px;margin:18px 0 20px;font-size:16px;line-height:1.55;color:var(--ink-soft);max-width:860px;}
+.callout strong{color:var(--ink);} 
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start;margin-top:18px;}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:22px;}
+.mini-card{background:var(--paper-tint);border-top:2px solid var(--red);padding:18px 18px 16px;min-height:130px;}
+.mini-card h3{font-family:var(--serif);font-size:19px;margin:0 0 8px;color:var(--ink);}
+.mini-card p{font-size:14px;line-height:1.55;color:var(--ink-soft);margin:0;}
+.flow-list{list-style:none;margin:20px 0 0;padding:0;max-width:860px;counter-reset:flow;}
+.flow-list li{counter-increment:flow;display:grid;grid-template-columns:42px 1fr;gap:16px;align-items:start;padding:13px 0;border-bottom:1px solid var(--gray-line);}
+.flow-list li::before{content:counter(flow, decimal-leading-zero);font-family:var(--serif);font-weight:600;color:var(--red);font-size:18px;line-height:1.4;}
+.flow-title{font-family:var(--serif);font-size:18px;color:var(--ink);margin-bottom:2px;}
+.flow-desc{font-size:14.5px;line-height:1.55;color:var(--ink-soft);}
+.big-quote{font-family:var(--serif);font-style:italic;font-size:28px;line-height:1.35;color:var(--red-dark);max-width:820px;margin:20px 0 24px;}
+.small-caps{font-size:11.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--red-dark);margin:20px 0 8px;}
+.check-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 32px;margin-top:16px;max-width:920px;}
+.check-grid div{font-size:15.2px;line-height:1.5;color:var(--ink-soft);border-bottom:1px solid var(--gray-line);padding:10px 0;}
+.check-grid div::before{content:'✓';display:inline-flex;width:22px;height:22px;border-radius:50%;background:var(--red);color:#fff;align-items:center;justify-content:center;font-size:12px;font-weight:700;margin-right:10px;}
+.resource-list{list-style:none;margin:18px 0 0;padding:0;max-width:920px;}
+.resource-list li{display:grid;grid-template-columns:260px 1fr;gap:28px;padding:13px 0;border-bottom:1px solid var(--gray-line);align-items:baseline;}
+.resource-list .r-name{font-family:var(--serif);font-size:17px;color:var(--ink);}
+.resource-list .r-desc{font-size:14px;line-height:1.55;color:var(--ink-soft);}
+@media (max-width:900px){.two-col,.three-col,.check-grid{grid-template-columns:1fr}.resource-list li{grid-template-columns:1fr;gap:4px}.mini-card{min-height:auto}}
+</style>
+
+</head>
+<body>
+<div class="app">
+  <div class="topbar">
+    <div class="topbar-brand">
+      UNIVERSITY <span class="of">of</span> <span class="red">HOUSTON</span><span class="pipe">|</span>ECE
+      <span class="deck-name">Thesis / Dissertation Research</span>
+    </div>
+    <div class="topbar-right">
+      <span class="slide-counter" id="slideCounter">01 / 55</span>
+      <button class="menu-btn" id="menuBtn">Contents</button>
+    </div>
+  </div>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+  <div class="stage" id="stage">
+
+    <div class="slide cover-slide" data-n="1" data-section="Welcome">
+      <div class="cover-scrim solid"></div>
+      <div class="cover-content">
+        <div class="cover-wordmark">UNIVERSITY <span class="of">of</span> <span class="red">HOUSTON</span><span class="pipe">|</span>ECE</div>
+        
+        <p class="cover-pretitle">ECE Graduate Research Student Guide</p>
+        <h1 class="cover-title">Thesis &amp; Dissertation Best Practices</h1>
+        <p class="cover-subtitle">Research process · Writing · Resources · Presenting</p>
+        <div class="cover-presenter"><span class="cp-name">Saurabh Prasad</span><span class="cp-role">Graduate Director</span><span class="cp-role">Electrical &amp; Computer Engineering · University of Houston</span></div>
+        <p class="cover-footnote">Source note: Material in these slides is drawn from Chapters 52–54 of Torralba, Isola &amp; Freeman, <em>Foundations of Computer Vision</em> (<span>visionbook.mit.edu</span>). These chapters have useful insights, even if computer vision is not your research area.</p>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="2" data-section="Welcome">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">02</span><span class="kicker-sep">—</span><span class="kicker-s">Welcome</span></div>
+        <h1 class="slide-title">How to Use This Deck</h1>
+        
+<p class="lead-line big">This is a practical operating manual for thesis and dissertation students.</p>
+<div class="two-col">
+  <div>
+    <div class="body-h4">Use it in layers</div>
+    <ul class="body-ul"><li>Before starting research: focus on mindset, literature, and advisor meetings.</li><li>While running experiments: focus on notebooks, reproducibility, and diagnosis.</li><li>While writing: focus on structure, figures, claims, and revision cycles.</li><li>Before a proposal, defense, or conference talk: focus on story and practice.</li></ul>
+  </div>
+  <div>
+    <div class="body-h4">Scope of the advice</div>
+    <p class="body-p">Most of the feedback in this deck applies to all thesis and dissertation students. Some examples reflect my own area — computer vision, signal processing, and machine learning — but the underlying ideas carry across all ECE research areas.</p>
+    <div class="body-h4">A note on sources</div>
+    <p class="source-note">Source note: Material in these slides is drawn from Chapters 52–54 of Torralba, Isola &amp; Freeman, <em>Foundations of Computer Vision</em> (<span class="inline-link">visionbook.mit.edu</span>). These chapters have useful insights, even if computer vision is not your research area.</p>
+  </div>
+</div>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="3" data-section="Welcome">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">03</span><span class="kicker-sep">—</span><span class="kicker-s">Welcome</span></div>
+        <h1 class="slide-title">Outline</h1>
+        <div class="outline-grid"><ol class="outline-col"><li><span class="ol-n">01</span><span><span class="ol-t">Research Mindset</span><br><span class="pillar-sub">What changes when problems stop being structured.</span></span></li><li><span class="ol-n">02</span><span><span class="ol-t">Research Process</span><br><span class="pillar-sub">How to choose, test, diagnose, document, and reproduce.</span></span></li><li><span class="ol-n">03</span><span><span class="ol-t">Thesis / Dissertation Path</span><br><span class="pillar-sub">How the project becomes a proposal, manuscript, and defense.</span></span></li></ol><ol class="outline-col"><li><span class="ol-n">04</span><span><span class="ol-t">Writing</span><br><span class="pillar-sub">How to make your work legible, credible, and persuasive.</span></span></li><li><span class="ol-n">05</span><span><span class="ol-t">Ethics, Collaboration & Talks</span><br><span class="pillar-sub">How to give credit, present well, and build trust.</span></span></li><li><span class="ol-n">06</span><span><span class="ol-t">Resources & Routines</span><br><span class="pillar-sub">How to use LaTeX, references, reproducible files, and a weekly system.</span></span></li></ol></div>
+      </div>
+    </div>
+    <div class="slide section-slide" data-n="4" data-section="Research Mindset">
+      <div class="section-scrim"></div>
+      <div class="slide-inner section-inner">
+        <div class="kicker light"><span class="kicker-n">04</span><span class="kicker-sep">—</span><span class="kicker-s">Research Mindset</span></div>
+        <h1 class="section-title">Research Mindset</h1>
+        <div class="body-col light"><p class="body-p">The hardest transition is not technical. It is moving from solving assigned problems to finding, shaping, and defending original ones.</p></div>
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="5" data-section="Research Mindset">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">05</span><span class="kicker-sep">—</span><span class="kicker-s">Research Mindset</span></div>
+        <h1 class="slide-title">From Structured Problems to Open Ones</h1>
+        
+<p class="lead-line">Coursework is usually designed so the answer exists. Research is designed around uncertainty.</p>
+<div class="three-col">
+ <div class="mini-card"><h3>In coursework</h3><p>The question is framed, the assumptions are known, and feedback arrives quickly.</p></div>
+ <div class="mini-card"><h3>In research</h3><p>The question may be wrong, the assumptions may fail, and feedback can be noisy or delayed.</p></div>
+ <div class="mini-card"><h3>Your new job</h3><p>Make uncertainty smaller through deliberate experiments and clear communication.</p></div>
+</div>
+<div class="callout"><strong>Core shift:</strong> no one tells you the right answer. Often, no one knows yet whether there is a right answer.</div>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="6" data-section="Research Mindset">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">06</span><span class="kicker-sep">—</span><span class="kicker-s">Research Mindset</span></div>
+        <h1 class="slide-title">Slow Down to Speed Up</h1>
+        
+<p class="big-quote">“Slow down to speed up.”</p>
+<ul class="body-ul"><li>Verify assumptions before building on them.</li><li>Change one thing at a time so the outcome is interpretable.</li><li>Run the smallest experiment that can answer the next question.</li><li>Keep the trail clear enough that your future self can reconstruct it.</li></ul>
+<p class="footer-line">Methodical work feels slower in the moment; it usually wins over weeks and semesters.</p>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="7" data-section="Research Mindset">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">07</span><span class="kicker-sep">—</span><span class="kicker-s">Research Mindset</span></div>
+        <h1 class="slide-title">Never Say “It Doesn’t Work”</h1>
+        
+<p class="lead-line">That sentence gives your advisor no diagnostic information.</p>
+<div class="two-col">
+  <div><div class="body-h4">Weak report</div><p class="body-p">“I tried the method and it does not work.”</p><div class="body-note">The failure could be in the idea, code, data, assumptions, metric, implementation, or interpretation.</div></div>
+  <div><div class="body-h4">Strong report</div><p class="body-p">“I narrowed the failure to step B. Step A matches the expected output on test input X. At B, the output has failure mode Y. I ruled out W and Z.”</p><div class="body-note">Diagnosis is part of the research contribution.</div></div>
+</div>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="8" data-section="Research Mindset">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">08</span><span class="kicker-sep">—</span><span class="kicker-s">Research Mindset</span></div>
+        <h1 class="slide-title">Be the Motor and the Rudder</h1>
+        
+<div class="two-col">
+  <div class="mini-card"><h3>Motor: work hard</h3><p>By graduate school, everyone is smart. The people who pull ahead usually show sustained effort, not occasional brilliance.</p></div>
+  <div class="mini-card"><h3>Rudder: steer</h3><p>Periodically ask whether you are working on the right problem, with the right experiments, at the right level of abstraction.</p></div>
+</div>
+<ul class="tips-list"><li><span class="tip-check">✓</span><span class="tip-t">Protect time for deep work.</span></li><li><span class="tip-check">✓</span><span class="tip-t">Protect time for health, relationships, and recovery.</span></li><li><span class="tip-check">✓</span><span class="tip-t">Do not confuse being busy with making progress.</span></li><li><span class="tip-check">✓</span><span class="tip-t">Every few weeks, ask: what result would change my plan?</span></li></ul>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="9" data-section="Research Mindset">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">09</span><span class="kicker-sep">—</span><span class="kicker-s">Research Mindset</span></div>
+        <h1 class="slide-title">Toy Models: Start with the Smallest Version</h1>
+        
+<p class="lead-line big">Find the simplest toy model that captures the main idea.</p>
+<ol class="flow-list"><li><div><div class="flow-title">Strip the problem down</div><div class="flow-desc">Remove all realism that is not needed for the core ambiguity or mechanism.</div></div></li><li><div><div class="flow-title">Make predictions</div><div class="flow-desc">Ask what each proposed method should do in this toy setting.</div></div></li><li><div><div class="flow-title">Run and reason</div><div class="flow-desc">If it fails here, scaling up will not rescue it. If it works here, you have intuition.</div></div></li><li><div><div class="flow-title">Scale carefully</div><div class="flow-desc">Add one source of realism at a time: noise, dimension, data size, hardware, people, or constraints.</div></div></li></ol>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="10" data-section="Research Mindset">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">10</span><span class="kicker-sep">—</span><span class="kicker-s">Research Mindset</span></div>
+        <h1 class="slide-title">The ε-Ball Around the Advisor’s Suggestion</h1>
+        
+<p class="lead-line">Doing exactly what was suggested is often not enough. The research move is to explore nearby variants.</p>
+<div class="callout"><strong>Strong student pattern:</strong> try the suggested approach, observe why it does not quite work, test a small neighborhood of variants, and return with the best explanation and next step.</div>
+<ul class="body-ul"><li>What if the loss changes?</li><li>What if the input is simplified?</li><li>What if one assumption is made explicit?</li><li>What if the method is tested on a case where it must succeed?</li><li>What if it is tested on a case where it must fail?</li></ul>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="11" data-section="Research Mindset">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">11</span><span class="kicker-sep">—</span><span class="kicker-s">Research Mindset</span></div>
+        <h1 class="slide-title">Know the Literature; Build a Reputation</h1>
+        
+<div class="two-col">
+  <div>
+    <div class="body-h4">Literature discipline</div>
+    <ul class="body-ul"><li>Track the major lines of work, not just one paper.</li><li>For each paper, record the problem, method, claim, evidence, and limitation.</li><li>Look for what everyone assumes but no one has tested.</li><li>Do not be caught missing closely related work.</li></ul>
+  </div>
+  <div>
+    <div class="body-h4">Reputation discipline</div>
+    <ul class="body-ul"><li>Be the person who gives careful updates.</li><li>Be the person whose figures and code can be trusted.</li><li>Be generous in collaboration and credit.</li><li>Every talk, paper, email, and meeting is a data point.</li></ul>
+  </div>
+</div>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="12" data-section="Research Mindset">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">12</span><span class="kicker-sep">—</span><span class="kicker-s">Research Mindset</span></div>
+        <h1 class="slide-title">Research Mindset Self-Check</h1>
+        <div class="check-grid"><div>Can I state the current research question in one sentence?</div><div>Can I name the smallest experiment that tests the next assumption?</div><div>Can I explain where the current failure occurs?</div><div>Have I changed only one thing since the last interpretable result?</div><div>Do I know the closest related papers?</div><div>Am I working hard and steering strategically?</div></div>
+      </div>
+    </div>
+    <div class="slide section-slide" data-n="13" data-section="Research Process">
+      <div class="section-scrim"></div>
+      <div class="slide-inner section-inner">
+        <div class="kicker light"><span class="kicker-n">13</span><span class="kicker-sep">—</span><span class="kicker-s">Research Process</span></div>
+        <h1 class="section-title">Research Process</h1>
+        <div class="body-col light"><p class="body-p">A thesis is built through repeated cycles: question, literature, hypothesis, experiment, diagnosis, explanation, writing.</p></div>
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="14" data-section="Research Process">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">14</span><span class="kicker-sep">—</span><span class="kicker-s">Research Process</span></div>
+        <h1 class="slide-title">Choose a Problem You Can Actually Move</h1>
+        
+<p class="lead-line">A good graduate research problem is important enough to matter and bounded enough to attack.</p>
+<ol class="flow-list"><li><div><div class="flow-title">Problem</div><div class="flow-desc">What is the gap, limitation, ambiguity, or engineering need?</div></div></li><li><div><div class="flow-title">Stakeholders</div><div class="flow-desc">Who cares if this is solved: researchers, practitioners, users, or society?</div></div></li><li><div><div class="flow-title">Leverage</div><div class="flow-desc">What tool, dataset, theory, device, or insight gives you an angle?</div></div></li><li><div><div class="flow-title">Evidence</div><div class="flow-desc">What result would convince a skeptical reader that progress was made?</div></div></li></ol>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="15" data-section="Research Process">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">15</span><span class="kicker-sep">—</span><span class="kicker-s">Research Process</span></div>
+        <h1 class="slide-title">Build a Literature Map</h1>
+        
+<div class="callout"><strong>Do not just collect PDFs.</strong> Convert reading into a map of ideas, assumptions, methods, datasets, and open problems.</div>
+<div class="three-col">
+  <div class="mini-card"><h3>Canon</h3><p>The foundational papers everyone cites and expects you to know.</p></div>
+  <div class="mini-card"><h3>Frontier</h3><p>The most recent papers that define what is currently possible.</p></div>
+  <div class="mini-card"><h3>Gap</h3><p>The limitation, mismatch, or untested assumption where your work enters.</p></div>
+</div>
+<p class="footer-line">Reading is not separate from research; it is how you learn what question is worth asking.</p>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="16" data-section="Research Process">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">16</span><span class="kicker-sep">—</span><span class="kicker-s">Research Process</span></div>
+        <h1 class="slide-title">Make Advisor Meetings Useful</h1>
+        
+<p class="lead-line">A good meeting is not a status confession. It is a decision-making session.</p>
+<ul class="tips-list"><li><span class="tip-check">✓</span><span class="tip-t">Send a concise agenda or update before the meeting when appropriate.</span></li><li><span class="tip-check">✓</span><span class="tip-t">Bring one or two figures, tables, or diagnostics—not a verbal blur.</span></li><li><span class="tip-check">✓</span><span class="tip-t">State what changed since last time and what you learned.</span></li><li><span class="tip-check">✓</span><span class="tip-t">End with explicit next actions, owners, and dates.</span></li><li><span class="tip-check">✓</span><span class="tip-t">Keep a running decision log so old questions do not reopen endlessly.</span></li></ul>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="17" data-section="Research Process">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">17</span><span class="kicker-sep">—</span><span class="kicker-s">Research Process</span></div>
+        <h1 class="slide-title">Design Experiments That Answer Questions</h1>
+        
+<p class="lead-line">Every experiment should have a claim it could support or refute.</p>
+<div class="two-col">
+ <div><ol class="flow-list"><li><div><div class="flow-title">Question</div><div class="flow-desc">What uncertainty is this experiment reducing?</div></div></li><li><div><div class="flow-title">Prediction</div><div class="flow-desc">What should happen if the hypothesis is right?</div></div></li><li><div><div class="flow-title">Controls</div><div class="flow-desc">What baseline, ablation, or sanity check is needed?</div></div></li></ol></div>
+ <div><ol class="flow-list"><li><div><div class="flow-title">Metric</div><div class="flow-desc">What will be measured, and why is it meaningful?</div></div></li><li><div><div class="flow-title">Failure mode</div><div class="flow-desc">What result would make you change your mind?</div></div></li><li><div><div class="flow-title">Record</div><div class="flow-desc">Where will the config, data, code, and output be stored?</div></div></li></ol></div>
+</div>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="18" data-section="Research Process">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">18</span><span class="kicker-sep">—</span><span class="kicker-s">Research Process</span></div>
+        <h1 class="slide-title">Keep a Research Notebook</h1>
+        
+<p class="lead-line">Your notebook is the memory of the project.</p>
+<ul class="body-ul"><li>Record the date, goal, hypothesis, setup, parameters, commits, datasets, and outcomes.</li><li>Paste or link figures and tables, not just prose descriptions.</li><li>Write one sentence after each experiment: “What did I learn?”</li><li>Record dead ends; they often become limitations, ablations, or future work.</li><li>Use a system you will actually maintain: paper, Markdown, OneNote, Overleaf, Notion, lab wiki, or a hybrid.</li></ul>
+<div class="body-note">The best notebook lets someone else reproduce the result—and lets you reproduce it six months later.</div>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="19" data-section="Research Process">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">19</span><span class="kicker-sep">—</span><span class="kicker-s">Research Process</span></div>
+        <h1 class="slide-title">Version Control, Backups, and Naming</h1>
+        
+<div class="callout"><strong>Catastrophic data loss is preventable.</strong> A thesis project needs a storage plan before it needs a final result.</div>
+<ul class="tips-list"><li><span class="tip-check">✓</span><span class="tip-t">Use Git or an equivalent version-control system for code and writing when possible.</span></li><li><span class="tip-check">✓</span><span class="tip-t">Separate raw data, processed data, scripts, results, and figures.</span></li><li><span class="tip-check">✓</span><span class="tip-t">Use names that survive time: dates, dataset, method, metric, version.</span></li><li><span class="tip-check">✓</span><span class="tip-t">Back up to at least two places, with one not on your laptop.</span></li><li><span class="tip-check">✓</span><span class="tip-t">Never overwrite the only copy of a result used in a paper, thesis, or defense slide.</span></li></ul>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="20" data-section="Research Process">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">20</span><span class="kicker-sep">—</span><span class="kicker-s">Research Process</span></div>
+        <h1 class="slide-title">Data, Code, and Reproducibility</h1>
+        
+<p class="lead-line">Reproducibility is not an afterthought; it is how you protect your own progress.</p>
+<div class="three-col">
+  <div class="mini-card"><h3>Data</h3><p>Document source, permissions, preprocessing, splits, exclusions, and derived versions.</p></div>
+  <div class="mini-card"><h3>Code</h3><p>Record environment, dependencies, scripts, configuration, random seeds, and commit hashes.</p></div>
+  <div class="mini-card"><h3>Results</h3><p>Connect every figure and table to the exact run that produced it.</p></div>
+</div>
+<ul class="body-ul"><li>Treat “I can reproduce this figure” as a milestone.</li><li>Automate routine plots and tables when possible.</li><li>Keep a README for every major project folder.</li></ul>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="21" data-section="Research Process">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">21</span><span class="kicker-sep">—</span><span class="kicker-s">Research Process</span></div>
+        <h1 class="slide-title">Negative Results Are Information</h1>
+        
+<p class="lead-line">A clean negative result is better than an ambiguous positive result.</p>
+<ol class="flow-list"><li><div><div class="flow-title">Define the expectation</div><div class="flow-desc">What should have happened if the idea were correct?</div></div></li><li><div><div class="flow-title">Check the implementation</div><div class="flow-desc">Can the code solve a case where the answer is known?</div></div></li><li><div><div class="flow-title">Reduce the setting</div><div class="flow-desc">Does the problem persist in a toy model?</div></div></li><li><div><div class="flow-title">Extract the lesson</div><div class="flow-desc">Is the failure due to data, assumptions, scale, metric, or theory?</div></div></li></ol>
+<p class="footer-line">Negative results become good thesis material when they are diagnostic and well explained.</p>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="22" data-section="Research Process">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">22</span><span class="kicker-sep">—</span><span class="kicker-s">Research Process</span></div>
+        <h1 class="slide-title">A Healthy Research Rhythm</h1>
+        
+<div class="three-col">
+  <div class="mini-card"><h3>Daily</h3><p>Make one concrete movement: read, implement, test, write, analyze, or plan.</p></div>
+  <div class="mini-card"><h3>Weekly</h3><p>Summarize what changed, what you learned, what is blocked, and the next experiment.</p></div>
+  <div class="mini-card"><h3>Monthly</h3><p>Step back: is the problem still right, and is the evidence accumulating toward a thesis?</p></div>
+</div>
+<div class="callout"><strong>Working rule:</strong> if a week passes and there is no artifact—figure, paragraph, result, note, code, or decision—the project is probably drifting.</div>
+
+      </div>
+    </div>
+    <div class="slide section-slide" data-n="23" data-section="Thesis / Dissertation Path">
+      <div class="section-scrim"></div>
+      <div class="slide-inner section-inner">
+        <div class="kicker light"><span class="kicker-n">23</span><span class="kicker-sep">—</span><span class="kicker-s">Thesis / Dissertation Path</span></div>
+        <h1 class="section-title">Thesis &amp; Dissertation Path</h1>
+        <div class="body-col light"><p class="body-p">The degree document is not just a long report. It is the formal argument that your research contribution is adequate in scope, quality, and originality.</p></div>
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="24" data-section="Thesis / Dissertation Path">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">24</span><span class="kicker-sep">—</span><span class="kicker-s">Thesis / Dissertation Path</span></div>
+        <h1 class="slide-title">What the Thesis or Dissertation Must Prove</h1>
+        
+<p class="lead-line">At the end, the committee is judging a body of work and your command of it.</p>
+<ul class="body-ul"><li>You understand the relevant literature and can situate your contribution.</li><li>You can define a meaningful problem and justify why it matters.</li><li>You can design and execute credible research methods.</li><li>You can interpret evidence honestly, including limitations.</li><li>You can communicate the work in writing and in an oral defense.</li></ul>
+<div class="body-note">For Ph.D. students, the standard is a dissertation-scale original contribution. For M.S. thesis students, the scope is smaller, but the need for clear evidence and writing is the same.</div>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="25" data-section="Thesis / Dissertation Path">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">25</span><span class="kicker-sep">—</span><span class="kicker-s">Thesis / Dissertation Path</span></div>
+        <h1 class="slide-title">Committee and Milestones</h1>
+        
+<p class="lead-line">Your advisor guides the research; your committee certifies the final work.</p>
+<ol class="flow-list"><li><div><div class="flow-title">Advisor alignment</div><div class="flow-desc">Clarify expectations for meetings, authorship, publications, funding, and timelines.</div></div></li><li><div><div class="flow-title">Committee formation</div><div class="flow-desc">Follow department/college rules and form the committee early enough to be useful.</div></div></li><li><div><div class="flow-title">Proposal or prospectus</div><div class="flow-desc">Convert an idea into a defensible plan with scope, literature, methods, and expected contributions.</div></div></li><li><div><div class="flow-title">Defense</div><div class="flow-desc">Present the completed work, answer questions, and make required revisions.</div></div></li><li><div><div class="flow-title">Final submission</div><div class="flow-desc">Complete college and Graduate School formatting, approval, and ETD steps.</div></div></li></ol>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="26" data-section="Thesis / Dissertation Path">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">26</span><span class="kicker-sep">—</span><span class="kicker-s">Thesis / Dissertation Path</span></div>
+        <h1 class="slide-title">Proposal: Turn a Topic into a Plan</h1>
+        
+<p class="lead-line">A proposal should reduce risk before the final semester.</p>
+<div class="two-col">
+ <div><ul class="body-ul"><li>Problem statement</li><li>Motivation and significance</li><li>Related work and gap</li><li>Preliminary results</li><li>Research aims or questions</li></ul></div>
+ <div><ul class="body-ul"><li>Methods and evaluation plan</li><li>Risks and alternatives</li><li>Timeline and milestones</li><li>Expected contributions</li><li>Publication or dissemination plan</li></ul></div>
+</div>
+<div class="callout"><strong>Good proposal question:</strong> What evidence would make the committee believe this project is feasible and worth completing?</div>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="27" data-section="Thesis / Dissertation Path">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">27</span><span class="kicker-sep">—</span><span class="kicker-s">Thesis / Dissertation Path</span></div>
+        <h1 class="slide-title">Anatomy of the Document</h1>
+        
+<p class="lead-line">Exact structure varies by field and advisor, but the argument is usually stable.</p>
+<ol class="flow-list"><li><div><div class="flow-title">Introduction</div><div class="flow-desc">Problem, motivation, gap, thesis statement, and contributions.</div></div></li><li><div><div class="flow-title">Background / Related Work</div><div class="flow-desc">What the reader needs to understand the field and your position in it.</div></div></li><li><div><div class="flow-title">Methods / System / Theory</div><div class="flow-desc">The technical contribution, written so a qualified reader can reproduce or evaluate it.</div></div></li><li><div><div class="flow-title">Results</div><div class="flow-desc">Evidence, comparisons, ablations, error analysis, and interpretation.</div></div></li><li><div><div class="flow-title">Discussion / Conclusion</div><div class="flow-desc">What changed because of the work, limitations, and credible future directions.</div></div></li></ol>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="28" data-section="Thesis / Dissertation Path">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">28</span><span class="kicker-sep">—</span><span class="kicker-s">Thesis / Dissertation Path</span></div>
+        <h1 class="slide-title">Chapter-by-Chapter Pipeline</h1>
+        
+<p class="lead-line">Do not wait until “all the research is done” to start the thesis.</p>
+<ul class="tips-list"><li><span class="tip-check">✓</span><span class="tip-t">Start a living document early with headings and placeholders.</span></li><li><span class="tip-check">✓</span><span class="tip-t">Write the introduction repeatedly as your understanding improves.</span></li><li><span class="tip-check">✓</span><span class="tip-t">Turn each mature result into a thesis-ready figure, caption, and paragraph.</span></li><li><span class="tip-check">✓</span><span class="tip-t">Use papers, reports, and proposal text as draft material, but integrate them into one argument.</span></li><li><span class="tip-check">✓</span><span class="tip-t">Keep a “missing evidence” list for claims that still need support.</span></li></ul>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="29" data-section="Thesis / Dissertation Path">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">29</span><span class="kicker-sep">—</span><span class="kicker-s">Thesis / Dissertation Path</span></div>
+        <h1 class="slide-title">Defense Preparation</h1>
+        
+<div class="callout"><strong>The defense is not a mystery exam.</strong> It is a formal conversation about work you have lived with for months or years.</div>
+<ul class="body-ul"><li>Confirm committee, date, room/Zoom logistics, forms, and deadlines early.</li><li>Send the manuscript with enough time for serious reading.</li><li>Practice the talk aloud; do at least one full mock defense.</li><li>Prepare backup slides for details, derivations, extra results, and likely questions.</li><li>Open by making the problem and contribution unmistakable. Close by making completion unmistakable.</li></ul>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="30" data-section="Thesis / Dissertation Path">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">30</span><span class="kicker-sep">—</span><span class="kicker-s">Thesis / Dissertation Path</span></div>
+        <h1 class="slide-title">ETD and Submission Resources</h1>
+        
+<p class="lead-line">Formatting and submission are part of graduation. Treat them as milestones, not clerical afterthoughts.</p>
+<ul class="resource-list">
+  <li><span class="r-name">UH Graduate School ETD information</span><span class="r-desc">Templates, approval forms, accessibility requirements, Vireo submission, embargo, copyright, and FAQ.</span></li>
+  <li><span class="r-name">Cullen College thesis/dissertation guide</span><span class="r-desc">College-level steps for defense, revision, approval form, formatting review, and electronic submission.</span></li>
+  <li><span class="r-name">Your department and advisor</span><span class="r-desc">Department-specific rules, expectations, committee practices, research-credit enrollment, and defense norms.</span></li>
+</ul>
+<div class="source-note">Use official UH, Cullen College, and department pages for current deadlines and forms. Procedures can change.</div>
+
+      </div>
+    </div>
+    <div class="slide section-slide" data-n="31" data-section="Writing">
+      <div class="section-scrim"></div>
+      <div class="slide-inner section-inner">
+        <div class="kicker light"><span class="kicker-n">31</span><span class="kicker-sep">—</span><span class="kicker-s">Writing</span></div>
+        <h1 class="section-title">Writing</h1>
+        <div class="body-col light"><p class="body-p">Writing is not packaging after the research. It is how you clarify what the research means.</p></div>
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="32" data-section="Writing">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">32</span><span class="kicker-sep">—</span><span class="kicker-s">Writing</span></div>
+        <h1 class="slide-title">Why Writing Matters</h1>
+        
+<p class="big-quote">Only the good papers count.</p>
+<p class="body-p">A thesis or dissertation is evaluated through writing. Even excellent experiments lose force if the reader cannot see the problem, contribution, evidence, and limitations.</p>
+<ul class="body-ul"><li>Write to make the work easy to understand, easy to trust, and hard to misread.</li><li>A strong paper or chapter can shape your reputation for years.</li><li>A weakly written document makes even good research look uncertain.</li></ul>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="33" data-section="Writing">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">33</span><span class="kicker-sep">—</span><span class="kicker-s">Writing</span></div>
+        <h1 class="slide-title">The Canonical Research Story</h1>
+        
+<p class="lead-line">Most research writing can be organized as a simple sequence.</p>
+<ol class="flow-list"><li><div><div class="flow-title">Problem</div><div class="flow-desc">What are you addressing, and why should the reader care?</div></div></li><li><div><div class="flow-title">Gap</div><div class="flow-desc">What do existing solutions do, and why are they not enough?</div></div></li><li><div><div class="flow-title">Idea</div><div class="flow-desc">What is your approach, and what is the key insight?</div></div></li><li><div><div class="flow-title">Evidence</div><div class="flow-desc">What experiments, analyses, or proofs support the claims?</div></div></li><li><div><div class="flow-title">Change</div><div class="flow-desc">What does the reader now know or do differently because of your work?</div></div></li></ol>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="34" data-section="Writing">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">34</span><span class="kicker-sep">—</span><span class="kicker-s">Writing</span></div>
+        <h1 class="slide-title">Write a Dynamite Introduction</h1>
+        
+<p class="lead-line">The introduction is the most-read part of the document. It must do real work.</p>
+<div class="check-grid"><div>What problem am I solving?</div><div>Why is the problem important now?</div><div>Why are existing approaches insufficient?</div><div>What is the core idea?</div><div>What exactly is new?</div><div>What evidence supports the contribution?</div></div>
+<div class="body-note">A good introduction lets a busy reader understand the whole paper or chapter before the details begin.</div>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="35" data-section="Writing">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">35</span><span class="kicker-sep">—</span><span class="kicker-s">Writing</span></div>
+        <h1 class="slide-title">One Figure Should Carry the Main Idea</h1>
+        
+<p class="lead-line">Aim for a visual abstract: one figure and caption that reveal the contribution.</p>
+<div class="two-col">
+  <div><ul class="body-ul"><li>Show the problem setup.</li><li>Show the key mechanism or system.</li><li>Show the contrast with prior work.</li><li>Show what the reader should notice.</li></ul></div>
+  <div><ul class="body-ul"><li>Caption should be self-contained.</li><li>Labels should be readable without zooming.</li><li>Use consistent notation and colors.</li><li>Avoid decorative complexity.</li></ul></div>
+</div>
+<p class="footer-line">If a reader sees only one figure, which one should it be?</p>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="36" data-section="Writing">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">36</span><span class="kicker-sep">—</span><span class="kicker-s">Writing</span></div>
+        <h1 class="slide-title">Results: Claims Need Evidence</h1>
+        
+<p class="lead-line">Every major claim should connect to a result, comparison, ablation, proof, or diagnostic.</p>
+<ol class="flow-list"><li><div><div class="flow-title">Main result</div><div class="flow-desc">Does the proposed method/system/theory work on the target problem?</div></div></li><li><div><div class="flow-title">Baseline</div><div class="flow-desc">How does it compare to the most relevant existing approach or simple alternative?</div></div></li><li><div><div class="flow-title">Ablation</div><div class="flow-desc">Which components are necessary, and what happens when they are removed?</div></div></li><li><div><div class="flow-title">Error analysis</div><div class="flow-desc">Where does it fail, and what does that teach us?</div></div></li><li><div><div class="flow-title">Interpretation</div><div class="flow-desc">What conclusion is justified—and what conclusion is not?</div></div></li></ol>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="37" data-section="Writing">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">37</span><span class="kicker-sep">—</span><span class="kicker-s">Writing</span></div>
+        <h1 class="slide-title">Use Fewer Words</h1>
+        
+<div class="two-col">
+  <div class="mini-card"><h3>Before</h3><p>“The underlying assumption of this work is that the estimate of a given node will only depend on nodes within a patch...”</p></div>
+  <div class="mini-card"><h3>After</h3><p>“We assume local influence: nodes depend only on other nodes within a patch.”</p></div>
+</div>
+<ul class="body-ul"><li>Cut throat-clearing phrases.</li><li>Prefer concrete nouns and active verbs.</li><li>One paragraph should make one move.</li><li>Delete sentences that do not change the reader’s understanding.</li><li>Concise writing is not shorter thinking; it is clearer thinking.</li></ul>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="38" data-section="Writing">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">38</span><span class="kicker-sep">—</span><span class="kicker-s">Writing</span></div>
+        <h1 class="slide-title">Equations, Figures, and Captions</h1>
+        
+<div class="three-col">
+ <div class="mini-card"><h3>Equations</h3><p>Introduce with words. Define symbols. Refer by meaning, not only number.</p></div>
+ <div class="mini-card"><h3>Figures</h3><p>Make them readable, consistent, and tightly connected to the text.</p></div>
+ <div class="mini-card"><h3>Captions</h3><p>Tell the reader what to notice and why it matters.</p></div>
+</div>
+<div class="body-note">Skimmers should still understand the story from title, abstract, figures, captions, and section headings.</div>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="39" data-section="Writing">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">39</span><span class="kicker-sep">—</span><span class="kicker-s">Writing</span></div>
+        <h1 class="slide-title">Revision Workflow</h1>
+        
+<p class="lead-line">Do not revise everything at once. Revise in passes.</p>
+<ol class="flow-list"><li><div><div class="flow-title">Argument pass</div><div class="flow-desc">Does the structure make a coherent claim?</div></div></li><li><div><div class="flow-title">Evidence pass</div><div class="flow-desc">Is every claim supported by the right figure, table, proof, or citation?</div></div></li><li><div><div class="flow-title">Reader pass</div><div class="flow-desc">Where will a skeptical but fair reader get lost?</div></div></li><li><div><div class="flow-title">Conciseness pass</div><div class="flow-desc">Can any sentence, paragraph, figure, or section be cut?</div></div></li><li><div><div class="flow-title">Mechanics pass</div><div class="flow-desc">References, notation, formatting, cross-references, accessibility, and PDF checks.</div></div></li></ol>
+
+      </div>
+    </div>
+    <div class="slide section-slide" data-n="40" data-section="Ethics, Collaboration &amp; Talks">
+      <div class="section-scrim"></div>
+      <div class="slide-inner section-inner">
+        <div class="kicker light"><span class="kicker-n">40</span><span class="kicker-sep">—</span><span class="kicker-s">Ethics, Collaboration &amp; Talks</span></div>
+        <h1 class="section-title">Ethics, Collaboration &amp; Talks</h1>
+        <div class="body-col light"><p class="body-p">Research is a trust system. Your data, authorship, citations, code, and presentations all build—or damage—that trust.</p></div>
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="41" data-section="Ethics, Collaboration &amp; Talks">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">41</span><span class="kicker-sep">—</span><span class="kicker-s">Ethics, Collaboration &amp; Talks</span></div>
+        <h1 class="slide-title">Collaborate Generously; Credit Carefully</h1>
+        
+<p class="lead-line">Science is a team sport, but credit must be explicit and fair.</p>
+<ul class="body-ul"><li>Discuss authorship expectations early and revisit when contributions change.</li><li>Include people who made substantive intellectual, experimental, coding, or writing contributions.</li><li>Cite related work accurately, even when it competes with yours.</li><li>Do not disparage prior work to make yours look stronger.</li><li>A generous, precise tone builds long-term credibility.</li></ul>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="42" data-section="Ethics, Collaboration &amp; Talks">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">42</span><span class="kicker-sep">—</span><span class="kicker-s">Ethics, Collaboration &amp; Talks</span></div>
+        <h1 class="slide-title">Research Integrity</h1>
+        
+<div class="callout"><strong>Rule of thumb:</strong> the reader should be able to trust that your figure, table, image, quotation, and citation mean exactly what you say they mean.</div>
+<ul class="tips-list"><li><span class="tip-check">✓</span><span class="tip-t">Do not cherry-pick results without saying what was excluded.</span></li><li><span class="tip-check">✓</span><span class="tip-t">Figures and images must faithfully represent the underlying data.</span></li><li><span class="tip-check">✓</span><span class="tip-t">Do not hide failed baselines or inconvenient limitations.</span></li><li><span class="tip-check">✓</span><span class="tip-t">Do not reuse text, figures, or data without permission and citation.</span></li><li><span class="tip-check">✓</span><span class="tip-t">Use AI tools only in ways consistent with advisor, course, journal, conference, and university policies.</span></li></ul>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="43" data-section="Ethics, Collaboration &amp; Talks">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">43</span><span class="kicker-sep">—</span><span class="kicker-s">Ethics, Collaboration &amp; Talks</span></div>
+        <h1 class="slide-title">Talks Are Research Artifacts</h1>
+        
+<p class="lead-line">A talk should not be a compressed thesis. It should be a guided story.</p>
+<div class="three-col">
+ <div class="mini-card"><h3>Problem</h3><p>What did you address, and why does it matter?</p></div>
+ <div class="mini-card"><h3>Key idea</h3><p>What makes your approach different or insightful?</p></div>
+ <div class="mini-card"><h3>Evidence</h3><p>How well did it work, and what should the audience remember?</p></div>
+</div>
+<ul class="body-ul"><li>Use verbal headings so distracted listeners can re-enter.</li><li>Ask questions or set up competing hypotheses when possible.</li><li>Practice the opening and transitions until they are smooth.</li></ul>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="44" data-section="Ethics, Collaboration &amp; Talks">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">44</span><span class="kicker-sep">—</span><span class="kicker-s">Ethics, Collaboration &amp; Talks</span></div>
+        <h1 class="slide-title">Short Talk Checklist</h1>
+        
+<p class="lead-line">For a 3–10 minute talk, advertise the work; do not unload every detail.</p>
+<div class="check-grid"><div>What problem did I address?</div><div>Why is it interesting?</div><div>Why is it hard?</div><div>What was the key idea?</div><div>How well did it work?</div><div>What should people ask me afterward?</div></div>
+<div class="body-note">For any short talk, there is no excuse not to practice aloud, start to finish, multiple times.</div>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="45" data-section="Ethics, Collaboration &amp; Talks">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">45</span><span class="kicker-sep">—</span><span class="kicker-s">Ethics, Collaboration &amp; Talks</span></div>
+        <h1 class="slide-title">End Deliberately</h1>
+        
+<p class="lead-line">Do not let the ending dissolve into “Any questions?”</p>
+<ul class="body-ul"><li>Remind the audience what you promised at the start.</li><li>State the contribution one last time.</li><li>Thank collaborators, funding sources, and the audience as appropriate.</li><li>Then clearly signal the transition to questions.</li><li>Keep backup slides ready for likely technical questions.</li></ul>
+<p class="footer-line">A confident ending helps the audience understand that the argument is complete.</p>
+
+      </div>
+    </div>
+    <div class="slide section-slide" data-n="46" data-section="Resources &amp; Routines">
+      <div class="section-scrim"></div>
+      <div class="slide-inner section-inner">
+        <div class="kicker light"><span class="kicker-n">46</span><span class="kicker-sep">—</span><span class="kicker-s">Resources &amp; Routines</span></div>
+        <h1 class="section-title">Resources &amp; Routines</h1>
+        <div class="body-col light"><p class="body-p">The most successful students build systems: for reading, writing, experiments, meetings, backups, and deadlines.</p></div>
+      </div>
+    </div>
+
+    <div class="slide standard-slide" data-n="47" data-section="Resources &amp; Routines">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">47</span><span class="kicker-sep">—</span><span class="kicker-s">Resources &amp; Routines</span></div>
+        <h1 class="slide-title">Build Your Writing Infrastructure Early</h1>
+        
+<p class="lead-line">Do not wait until the final semester to learn the tools that will hold your thesis or dissertation together.</p>
+<div class="three-col">
+  <div class="mini-card"><h3>Writing system</h3><p>Use LaTeX, Word, or another approved workflow consistently. The key is stable formatting, cross-references, and version history.</p></div>
+  <div class="mini-card"><h3>Reference system</h3><p>Use a bibliography manager from the beginning so citations, PDFs, notes, and BibTeX entries do not become a last-minute archaeology project.</p></div>
+  <div class="mini-card"><h3>Project system</h3><p>Keep manuscript, figures, tables, code, data notes, and results organized so every claim can be traced back to evidence.</p></div>
+</div>
+<p class="footer-line">The tool choice matters less than the habit: make the work reproducible, searchable, and easy to revise.</p>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="48" data-section="Resources &amp; Routines">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">48</span><span class="kicker-sep">—</span><span class="kicker-s">Resources &amp; Routines</span></div>
+        <h1 class="slide-title">LaTeX: Use It as a Research Tool</h1>
+        
+<p class="lead-line">LaTeX is not just for equations; it is a system for maintaining a large technical argument.</p>
+<ol class="flow-list"><li><div><div class="flow-title">Start from the right template</div><div class="flow-desc">Use the department, college, journal, or conference template before heavy writing begins.</div></div></li><li><div><div class="flow-title">Write modularly</div><div class="flow-desc">Separate chapters or sections into files; keep figures and tables in predictable folders.</div></div></li><li><div><div class="flow-title">Use labels, not manual numbers</div><div class="flow-desc">Cross-reference sections, equations, figures, tables, and algorithms with labels so the document can change safely.</div></div></li><li><div><div class="flow-title">Compile often</div><div class="flow-desc">Fix warnings early, especially missing references, overfull boxes, broken citations, and figure path errors.</div></div></li></ol>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="49" data-section="Resources &amp; Routines">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">49</span><span class="kicker-sep">—</span><span class="kicker-s">Resources &amp; Routines</span></div>
+        <h1 class="slide-title">Bibliography Managers: Citation Hygiene</h1>
+        
+<p class="lead-line">Your references are part of the research record, not decoration at the end.</p>
+<ul class="resource-list">
+  <li><span class="r-name">Choose one manager</span><span class="r-desc">Zotero, Mendeley, EndNote, BibDesk, or another system is fine; switching repeatedly creates errors.</span></li>
+  <li><span class="r-name">Clean the metadata</span><span class="r-desc">Check author names, title capitalization, venue, year, DOI, arXiv version, and duplicate entries before citing.</span></li>
+  <li><span class="r-name">Keep notes with papers</span><span class="r-desc">Record the contribution, limitation, dataset, method, and why the paper matters to your work.</span></li>
+  <li><span class="r-name">Cite generously and precisely</span><span class="r-desc">Do not cite a paper you have not read closely enough to explain; do not omit closely related work.</span></li>
+</ul>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="50" data-section="Resources &amp; Routines">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">50</span><span class="kicker-sep">—</span><span class="kicker-s">Resources &amp; Routines</span></div>
+        <h1 class="slide-title">Figures, Tables, and Reproducible Builds</h1>
+        
+<p class="lead-line">A figure in the thesis should not be a mysterious file on someone's laptop.</p>
+<div class="check-grid"><div>Can I identify the script, notebook, data version, and parameters that produced this figure?</div><div>Are axis labels, units, legends, fonts, and captions readable without zooming?</div><div>Are the same colors, names, metrics, and baselines used consistently across chapters?</div><div>Can I regenerate the table or figure after a reviewer, advisor, or committee member requests a change?</div><div>Have I preserved the underlying data and avoided manual edits that obscure the provenance?</div><div>Does the caption say what the reader should notice and what conclusion is justified?</div></div>
+<div class="body-note">Good practice: keep generated figures separate from source data, and document the command or workflow that produced each final artifact.</div>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="51" data-section="Resources &amp; Routines">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">51</span><span class="kicker-sep">—</span><span class="kicker-s">Resources &amp; Routines</span></div>
+        <h1 class="slide-title">Useful Resources</h1>
+        
+<ul class="resource-list">
+  <li><span class="r-name">Advisor and committee</span><span class="r-desc">Primary source for expectations about research scope, standards, authorship, and defense readiness.</span></li>
+  <li><span class="r-name">ECE graduate advising</span><span class="r-desc">Degree requirements, enrollment issues, petitions, forms, milestones, and policy questions.</span></li>
+  <li><span class="r-name">UH Graduate School</span><span class="r-desc">ETD submission, formatting resources, accessibility guidance, deadlines, graduation process.</span></li>
+  <li><span class="r-name">Cullen College Engineering</span><span class="r-desc">College thesis/dissertation guide, committee formation guidance, approval forms, formatting review.</span></li>
+  <li><span class="r-name">UH Libraries and Writing Center</span><span class="r-desc">Research support, databases, citation help, graduate writing consultations, and writing accelerator programs.</span></li>
+</ul>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="52" data-section="Resources &amp; Routines">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">52</span><span class="kicker-sep">—</span><span class="kicker-s">Resources &amp; Routines</span></div>
+        <h1 class="slide-title">Your Weekly Operating System</h1>
+        
+<p class="lead-line">A simple weekly update can prevent months of drift.</p>
+<ol class="flow-list"><li><div><div class="flow-title">What changed?</div><div class="flow-desc">Results, readings, code, writing, decisions, meetings, or obstacles since last week.</div></div></li><li><div><div class="flow-title">What did I learn?</div><div class="flow-desc">The specific insight, not just the activity completed.</div></div></li><li><div><div class="flow-title">What is blocked?</div><div class="flow-desc">Data, equipment, permissions, code, theory, writing, scheduling, or feedback.</div></div></li><li><div><div class="flow-title">What is next?</div><div class="flow-desc">One to three concrete actions that can be checked by next week.</div></div></li></ol>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="53" data-section="Resources &amp; Routines">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">53</span><span class="kicker-sep">—</span><span class="kicker-s">Resources &amp; Routines</span></div>
+        <h1 class="slide-title">Combined Big Picture</h1>
+        
+<p class="lead-line big">Research, writing, and speaking are three forms of the same discipline: clear thinking communicated effectively.</p>
+<ul class="tips-list"><li><span class="tip-check">✓</span><span class="tip-t">Research develops the idea.</span></li><li><span class="tip-check">✓</span><span class="tip-t">Writing makes the idea legible.</span></li><li><span class="tip-check">✓</span><span class="tip-t">Talks make the idea memorable.</span></li><li><span class="tip-check">✓</span><span class="tip-t">Ethics and reproducibility make the idea trustworthy.</span></li><li><span class="tip-check">✓</span><span class="tip-t">Routines keep the idea moving when motivation fluctuates.</span></li></ul>
+
+      </div>
+    </div>
+    <div class="slide standard-slide" data-n="54" data-section="Resources &amp; Routines">
+      <div class="slide-inner">
+        <div class="kicker"><span class="kicker-n">54</span><span class="kicker-sep">—</span><span class="kicker-s">Resources &amp; Routines</span></div>
+        <h1 class="slide-title">Final Self-Check</h1>
+        <div class="check-grid"><div>I can state my research question and why it matters.</div><div>I have a literature map, not just a folder of PDFs.</div><div>I keep a notebook that records experiments and lessons.</div><div>I can reproduce my important figures and tables.</div><div>I know my next milestone and the forms/deadlines attached to it.</div><div>I am writing before the final semester, not after the work is “done.”</div><div>I can explain my contribution to a technical outsider.</div><div>I am building a reputation for careful, generous, trustworthy work.</div></div>
+      </div>
+    </div>
+    <div class="slide cover-slide" data-n="55" data-section="Closing">
+      <div class="cover-scrim solid"></div>
+      <div class="cover-content">
+        <div class="cover-wordmark">UNIVERSITY <span class="of">of</span> <span class="red">HOUSTON</span><span class="pipe">|</span>ECE</div>
+        
+        <h1 class="cover-title">Do Good Work.<br>Make It Clear.</h1>
+        <p class="closing-message">The goal is not only to finish a thesis or dissertation. The goal is to become a researcher whose work others can understand, trust, and build on.</p>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="bottombar">
+    <button class="nav-btn" id="prevBtn">&larr; Previous</button>
+    <span class="bottombar-section" id="sectionLabel"></span>
+    <button class="nav-btn" id="nextBtn">Next &rarr;</button>
+  </div>
+</div>
+
+<div class="toc-overlay" id="tocOverlay">
+  <div class="toc-panel">
+    <div class="toc-head">
+      <h2 class="toc-title">Contents</h2>
+      <button class="toc-close" id="tocClose">&times;</button>
+    </div>
+    <div class="toc-section">
+      <div class="toc-section-name">Welcome</div>
+      <div class="toc-items"><div class="toc-item" data-n="1"><span class="tn">01</span><span>Thesis &amp; Dissertation Best Practices</span></div><div class="toc-item" data-n="2"><span class="tn">02</span><span>How to Use This Deck</span></div><div class="toc-item" data-n="3"><span class="tn">03</span><span>Outline</span></div></div>
+    </div>
+    <div class="toc-section">
+      <div class="toc-section-name">Research Mindset</div>
+      <div class="toc-items"><div class="toc-item" data-n="4"><span class="tn">04</span><span>Research Mindset</span></div><div class="toc-item" data-n="5"><span class="tn">05</span><span>From Structured Problems to Open Ones</span></div><div class="toc-item" data-n="6"><span class="tn">06</span><span>Slow Down to Speed Up</span></div><div class="toc-item" data-n="7"><span class="tn">07</span><span>Never Say “It Doesn’t Work”</span></div><div class="toc-item" data-n="8"><span class="tn">08</span><span>Be the Motor and the Rudder</span></div><div class="toc-item" data-n="9"><span class="tn">09</span><span>Toy Models: Start with the Smallest Version</span></div><div class="toc-item" data-n="10"><span class="tn">10</span><span>The ε-Ball Around the Advisor’s Suggestion</span></div><div class="toc-item" data-n="11"><span class="tn">11</span><span>Know the Literature; Build a Reputation</span></div><div class="toc-item" data-n="12"><span class="tn">12</span><span>Research Mindset Self-Check</span></div></div>
+    </div>
+    <div class="toc-section">
+      <div class="toc-section-name">Research Process</div>
+      <div class="toc-items"><div class="toc-item" data-n="13"><span class="tn">13</span><span>Research Process</span></div><div class="toc-item" data-n="14"><span class="tn">14</span><span>Choose a Problem You Can Actually Move</span></div><div class="toc-item" data-n="15"><span class="tn">15</span><span>Build a Literature Map</span></div><div class="toc-item" data-n="16"><span class="tn">16</span><span>Make Advisor Meetings Useful</span></div><div class="toc-item" data-n="17"><span class="tn">17</span><span>Design Experiments That Answer Questions</span></div><div class="toc-item" data-n="18"><span class="tn">18</span><span>Keep a Research Notebook</span></div><div class="toc-item" data-n="19"><span class="tn">19</span><span>Version Control, Backups, and Naming</span></div><div class="toc-item" data-n="20"><span class="tn">20</span><span>Data, Code, and Reproducibility</span></div><div class="toc-item" data-n="21"><span class="tn">21</span><span>Negative Results Are Information</span></div><div class="toc-item" data-n="22"><span class="tn">22</span><span>A Healthy Research Rhythm</span></div></div>
+    </div>
+    <div class="toc-section">
+      <div class="toc-section-name">Thesis / Dissertation Path</div>
+      <div class="toc-items"><div class="toc-item" data-n="23"><span class="tn">23</span><span>Thesis &amp; Dissertation Path</span></div><div class="toc-item" data-n="24"><span class="tn">24</span><span>What the Thesis or Dissertation Must Prove</span></div><div class="toc-item" data-n="25"><span class="tn">25</span><span>Committee and Milestones</span></div><div class="toc-item" data-n="26"><span class="tn">26</span><span>Proposal: Turn a Topic into a Plan</span></div><div class="toc-item" data-n="27"><span class="tn">27</span><span>Anatomy of the Document</span></div><div class="toc-item" data-n="28"><span class="tn">28</span><span>Chapter-by-Chapter Pipeline</span></div><div class="toc-item" data-n="29"><span class="tn">29</span><span>Defense Preparation</span></div><div class="toc-item" data-n="30"><span class="tn">30</span><span>ETD and Submission Resources</span></div></div>
+    </div>
+    <div class="toc-section">
+      <div class="toc-section-name">Writing</div>
+      <div class="toc-items"><div class="toc-item" data-n="31"><span class="tn">31</span><span>Writing</span></div><div class="toc-item" data-n="32"><span class="tn">32</span><span>Why Writing Matters</span></div><div class="toc-item" data-n="33"><span class="tn">33</span><span>The Canonical Research Story</span></div><div class="toc-item" data-n="34"><span class="tn">34</span><span>Write a Dynamite Introduction</span></div><div class="toc-item" data-n="35"><span class="tn">35</span><span>One Figure Should Carry the Main Idea</span></div><div class="toc-item" data-n="36"><span class="tn">36</span><span>Results: Claims Need Evidence</span></div><div class="toc-item" data-n="37"><span class="tn">37</span><span>Use Fewer Words</span></div><div class="toc-item" data-n="38"><span class="tn">38</span><span>Equations, Figures, and Captions</span></div><div class="toc-item" data-n="39"><span class="tn">39</span><span>Revision Workflow</span></div></div>
+    </div>
+    <div class="toc-section">
+      <div class="toc-section-name">Ethics, Collaboration &amp; Talks</div>
+      <div class="toc-items"><div class="toc-item" data-n="40"><span class="tn">40</span><span>Ethics, Collaboration &amp; Talks</span></div><div class="toc-item" data-n="41"><span class="tn">41</span><span>Collaborate Generously; Credit Carefully</span></div><div class="toc-item" data-n="42"><span class="tn">42</span><span>Research Integrity</span></div><div class="toc-item" data-n="43"><span class="tn">43</span><span>Talks Are Research Artifacts</span></div><div class="toc-item" data-n="44"><span class="tn">44</span><span>Short Talk Checklist</span></div><div class="toc-item" data-n="45"><span class="tn">45</span><span>End Deliberately</span></div></div>
+    </div>
+    <div class="toc-section">
+      <div class="toc-section-name">Resources &amp; Routines</div>
+      <div class="toc-items"><div class="toc-item" data-n="46"><span class="tn">46</span><span>Resources &amp; Routines</span></div><div class="toc-item" data-n="47"><span class="tn">47</span><span>Build Your Writing Infrastructure Early</span></div><div class="toc-item" data-n="48"><span class="tn">48</span><span>LaTeX: Use It as a Research Tool</span></div><div class="toc-item" data-n="49"><span class="tn">49</span><span>Bibliography Managers: Citation Hygiene</span></div><div class="toc-item" data-n="50"><span class="tn">50</span><span>Figures, Tables, and Reproducible Builds</span></div><div class="toc-item" data-n="51"><span class="tn">51</span><span>Useful Resources</span></div><div class="toc-item" data-n="52"><span class="tn">52</span><span>Your Weekly Operating System</span></div><div class="toc-item" data-n="53"><span class="tn">53</span><span>Combined Big Picture</span></div><div class="toc-item" data-n="54"><span class="tn">54</span><span>Final Self-Check</span></div></div>
+    </div>
+    <div class="toc-section">
+      <div class="toc-section-name">Closing</div>
+      <div class="toc-items"><div class="toc-item" data-n="55"><span class="tn">55</span><span>Thank You</span></div></div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const total = slides.length;
+  const isHidden = i => slides[i].dataset.hidden === 'true';
+  const visibleIdx = slides.map((s,i)=>i).filter(i => !isHidden(i));
+  const visibleCount = visibleIdx.length;
+  let idx = 0;
+
+  const counter = document.getElementById('slideCounter');
+  const progressFill = document.getElementById('progressFill');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const sectionLabel = document.getElementById('sectionLabel');
+  const stage = document.getElementById('stage');
+
+  function nextVisible(from){
+    for(let i=from+1;i<total;i++){ if(!isHidden(i)) return i; }
+    return -1;
+  }
+  function prevVisible(from){
+    for(let i=from-1;i>=0;i--){ if(!isHidden(i)) return i; }
+    return -1;
+  }
+
+  function go(n, dir){
+    n = Math.max(0, Math.min(total-1, n));
+    if(n === idx) return;
+    slides[idx].classList.remove('active');
+    slides[idx].classList.remove('leaving-back');
+    if(dir === 'back'){ slides[n].classList.add('leaving-back'); }
+    idx = n;
+    const cur = slides[idx];
+    cur.classList.remove('leaving-back');
+    void cur.offsetWidth;
+    cur.classList.add('active');
+    cur.scrollTop = 0;
+    update();
+  }
+
+  function update(){
+    if(isHidden(idx)){
+      counter.textContent = 'Hidden slide';
+    } else {
+      const pos = visibleIdx.indexOf(idx);
+      counter.textContent = String(pos+1).padStart(2,'0') + ' / ' + String(visibleCount).padStart(2,'0');
+      progressFill.style.width = ((pos+1)/visibleCount*100) + '%';
+    }
+    sectionLabel.textContent = slides[idx].dataset.section || '';
+    prevBtn.disabled = prevVisible(idx) === -1;
+    nextBtn.disabled = nextVisible(idx) === -1;
+    history.replaceState(null, '', '#slide-' + (idx+1));
+  }
+
+  prevBtn.addEventListener('click', ()=>{ const p = prevVisible(idx); if(p !== -1) go(p,'back'); });
+  nextBtn.addEventListener('click', ()=>{ const n = nextVisible(idx); if(n !== -1) go(n,'fwd'); });
+
+  document.addEventListener('keydown', (e)=>{
+    if(tocOpen){
+      if(e.key === 'Escape') closeToc();
+      return;
+    }
+    if(e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown'){ e.preventDefault(); const n = nextVisible(idx); if(n !== -1) go(n,'fwd'); }
+    else if(e.key === 'ArrowLeft' || e.key === 'PageUp'){ e.preventDefault(); const p = prevVisible(idx); if(p !== -1) go(p,'back'); }
+    else if(e.key === 'Home'){ go(visibleIdx[0],'back'); }
+    else if(e.key === 'End'){ go(visibleIdx[visibleCount-1],'fwd'); }
+    else if(e.key.toLowerCase() === 'g'){ openToc(); }
+  });
+
+  // swipe
+  let touchX = null;
+  stage.addEventListener('touchstart', e=>{ touchX = e.touches[0].clientX; }, {passive:true});
+  stage.addEventListener('touchend', e=>{
+    if(touchX === null) return;
+    const dx = e.changedTouches[0].clientX - touchX;
+    if(Math.abs(dx) > 60){
+      if(dx < 0){ const n = nextVisible(idx); if(n !== -1) go(n,'fwd'); }
+      else { const p = prevVisible(idx); if(p !== -1) go(p,'back'); }
+    }
+    touchX = null;
+  }, {passive:true});
+
+  // TOC
+  const tocOverlay = document.getElementById('tocOverlay');
+  const menuBtn = document.getElementById('menuBtn');
+  const tocClose = document.getElementById('tocClose');
+  let tocOpen = false;
+  function openToc(){ tocOverlay.classList.add('open'); tocOpen = true; }
+  function closeToc(){ tocOverlay.classList.remove('open'); tocOpen = false; }
+  menuBtn.addEventListener('click', openToc);
+  tocClose.addEventListener('click', closeToc);
+  tocOverlay.addEventListener('click', (e)=>{ if(e.target === tocOverlay) closeToc(); });
+  document.querySelectorAll('.toc-item').forEach(item=>{
+    item.addEventListener('click', ()=>{
+      const n = parseInt(item.dataset.n,10) - 1;
+      closeToc();
+      go(n, n < idx ? 'back' : 'fwd');
+    });
+  });
+
+  // init from hash
+  const hash = location.hash.match(/slide-(\d+)/);
+  if(hash){
+    const n = Math.max(0, Math.min(total-1, parseInt(hash[1],10)-1));
+    slides[0].classList.remove('active');
+    idx = n;
+    slides[idx].classList.add('active');
+  } else {
+    slides[visibleIdx[0]].classList.add('active');
+    idx = visibleIdx[0];
+  }
+  update();
+})();
+
+</script>
+</body>
+</html>
+
