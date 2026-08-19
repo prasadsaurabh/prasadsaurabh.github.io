@@ -52,7 +52,7 @@ params:
   profileMode:
     enabled: true
     title: "Saurabh Prasad"
-subtitle: "I am a Full Professor of Electrical & Computer Engineering and Director of Graduate Studies at the University of Houston, where I direct the Machine Learning and Signal Processing (MLSP) Laboratory. My research focuses on machine learning for geospatial imaging (GeoAI) and biomedicine, with emphasis on foundation models, active learning, and multi-sensor image analysis. IEEE GRSS Distinguished Lecturer. 2026 President's Circle Awards Scholar. Area Chair: ICLR, NeurIPS. Organizer: GeoCV @ WACV, MORSE @ CVPR. Funding: NASA, NSF, NIH, DoD, Amazon AWS."    imageUrl: "picture.jpeg"
+subtitle: "I am a Full Professor of Electrical & Computer Engineering where I also serve as the Director of Graduate Studies at the University of Houston. I direct the Machine Learning and Signal Processing (MLSP) Laboratory. My research focuses on machine learning for geospatial imaging (GeoAI) and biomedicine, with emphasis on foundation models, active learning, and multi-sensor image analysis. IEEE GRSS Distinguished Lecturer. 2026 President's Circle Awards Scholar. Area Chair: ICLR, NeurIPS. Organizer: GeoCV @ WACV, MORSE @ CVPR. Funding: NASA, NSF, NIH, DoD, Amazon AWS."    imageUrl: "picture.jpeg"
     imageWidth: 120
     imageHeight: 120
     imageTitle: "Saurabh Prasad"
