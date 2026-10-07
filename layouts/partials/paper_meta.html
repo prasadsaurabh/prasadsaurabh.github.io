@@ -1,0 +1,14 @@
+{{- /* Authors (your name in bold), venue, and link buttons from front matter */ -}}
+{{- with .Params.authors }}
+<p class="paper-authors">
+  {{- range $i, $a := . }}{{ if $i }}, {{ end }}{{ if eq $a "Saurabh Prasad" }}<strong>{{ $a }}</strong>{{ else }}{{ $a }}{{ end }}{{ end -}}
+  {{- if eq $.Section "books" }} (eds.){{ end -}}
+</p>
+{{- end }}
+{{- with .Params.publication }}<p class="paper-venue">{{ . }}</p>{{ end }}
+{{- if or .Params.url_pdf .Params.links }}
+<p class="paper-links">
+  {{- with .Params.url_pdf }}<a class="paper-btn" href="{{ . }}" target="_blank" rel="noopener">PDF</a>{{ end }}
+  {{- range .Params.links }}<a class="paper-btn" href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>{{ end }}
+</p>
+{{- end }}

@@ -3,7 +3,7 @@ title: "Teaching"
 description: "Courses taught by Prof. Saurabh Prasad at the University of Houston"
 ---
 
-I teach graduate and undergraduate courses in electrical engineering, signal processing, and machine learning at the University of Houston. My courses combine rigorous theoretical foundations with hands-on projects on real-world datasets. Recent courses offered include:
+I teach courses in electrical engineering, signal processing, and machine learning at the University of Houston. My courses combine rigorous theoretical foundations with hands-on projects on real-world datasets. Recent courses offered include:
 
 ---
 
@@ -41,6 +41,4 @@ A solid understanding of probability and stochastic processes underpins virtuall
 
 ## Prospective Students
 
-I am actively recruiting motivated PhD students with strong backgrounds in electrical engineering, computer science, or related fields. Ideal candidates have experience with deep learning frameworks (PyTorch/TensorFlow) and a passion for research in GeoAI or biomedical image analysis.
-
-To be considered, please complete the [interest form](#interest-form) below and include links to your CV, transcripts, and any published work (Google Scholar, arXiv, or similar).
+I am recruiting PhD students. See [Join the lab](/join/) for how to apply, and my [Research Student Guide](/research-guide/) for how I approach thesis and dissertation research.

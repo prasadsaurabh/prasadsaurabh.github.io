@@ -7,40 +7,34 @@ authors:
   - Biplab Banerjee
   - Saurabh Prasad
 publication: >-
-  ICML TerraBytes Workshop 2025 (Spotlight Paper)
+  ICML 2025 TerraBytes Workshop (Spotlight)
 tags:
-  - "ICML TerraBytes 2025 (Spotlight)"
   - "Hyperspectral"
   - "Diffusion Models"
   - "Label-Efficient Learning"
   - "GeoAI"
 summary: >-
-  **ICML TerraBytes 2025 (Spotlight)** · We present a label-efficient framework for hyperspectral image classification that leverages spatial features from a frozen diffusion model pretrained on natural images. A lightweight FiLM-based fusion module adaptively integrates spectral cues into frozen spatial features, outperforming state-of-the-art approaches using only sparse training labels.
+  We present a label-efficient framework for hyperspectral image classification that leverages spatial features from a frozen diffusion model pretrained on natural images. A lightweight FiLM-based fusion module adaptively integrates spectral cues into frozen spatial features, outperforming state-of-the-art approaches using only sparse training labels.
 links:
-  - name: Link
+  - name: OpenReview
     url: 'https://openreview.net/forum?id=l9wTrSu9i9'
 cover:
   image: "cover.png"
-  alt: "SpectralDIff figure"
+  alt: "GeoDiffNet: frozen pretrained diffusion features modulated by a spectral branch through FiLM"
   relative: true
   hiddenInList: false
 ---
 
 ---
 
-##### Abstract
+## Abstract {.label}
 
 Hyperspectral imaging (HSI) enables detailed land cover classification, but low spatial resolution and sparse annotations pose significant challenges. We present a label-efficient framework that leverages spatial features from a frozen diffusion model pretrained on natural images. Specifically, we extract low-level representations from high-resolution decoder layers at early denoising timesteps, which transfer well to the low-texture setting of HSI. To combine spectral and spatial information, we introduce a lightweight FiLM-based fusion module that adaptively integrates spectral cues into frozen spatial features, enabling effective multimodal learning under sparse supervision. Experiments on two recent hyperspectral datasets show that our method outperforms state-of-the-art approaches using only the sparse training labels provided.
 
----
-
-##### Download
-
-- [OpenReview](https://openreview.net/forum?id=l9wTrSu9i9)
 
 ---
 
-##### Citation
+## Citation {.label}
 
 ```BibTeX
 @inproceedings{Hu2025Label,

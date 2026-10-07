@@ -9,38 +9,41 @@ authors:
 publication: >-
   IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing
 tags:
-  - "IEEE JSTARS 2026"
   - "Foundation Models"
   - "Multispectral"
   - "GeoAI"
 summary: >-
-  **IEEE JSTARS 2026** · This paper presents advances in efficient vision foundation models tailored for analysis of multispectral earth observation imagery, addressing the unique challenges of variable band configurations, spatial resolution differences, and limited labeled data.
+  This paper presents advances in efficient vision foundation models tailored for analysis of multispectral earth observation imagery, addressing the unique challenges of variable band configurations, spatial resolution differences, and limited labeled data.
 
 links:
-  - name: Link
-    url: 'https://ieeexplore.ieee.org/abstract/document/10681548'
+  - name: IEEE (DOI)
+    url: 'https://doi.org/10.1109/JSTARS.2026.3669586'
 cover:
   image: "cover.png"
-  alt: "DINO Soars paper figure"
+  alt: "Architecture of the multispectral masked-autoencoder foundation model: band grouping, random masking, a self-attention encoder and a cross-attention decoder"
   relative: true
   hiddenInList: false
 ---
 
----
-
-##### Download
-
-- Paper (https://ieeexplore.ieee.org/abstract/document/10681548)
 
 ---
 
-##### Citation
+## Summary {.label}
+
+This paper presents advances in efficient vision foundation models tailored for analysis of multispectral earth observation imagery, addressing the unique challenges of variable band configurations, spatial resolution differences, and limited labeled data.
+
+---
+
+## Citation {.label}
 
 ```BibTeX
 @article{Liu2026,
   author = {Liu, Wei and Prasad, Saurabh and Crawford, Melba},
   title = {Advancing Efficient Vision Foundation Models for Analysis of Multispectral Imagery},
-  journal = {IEEE JSTARS},
-  year = {2026}
+  journal = {IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing},
+  volume = {19},
+  pages = {10825--10841},
+  year = {2026},
+  doi = {10.1109/JSTARS.2026.3669586}
 }
 ```
