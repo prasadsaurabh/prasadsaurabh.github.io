@@ -30,3 +30,58 @@
     display: flex !important;
     justify-content: center !important;
 }
+
+/* ---------- Accessibility: darker label grey (5.1:1 on white, was 2.46:1) ---------- */
+:root { --gray: rgb(110, 110, 110); }
+
+/* ---------- Paper / book metadata ---------- */
+.paper-authors { margin: .25rem 0 0; font-size: 15px; color: var(--content); }
+.paper-venue { margin: .15rem 0 .4rem; font-size: 14px; font-style: italic; color: var(--secondary); }
+.paper-links { display: flex; flex-wrap: wrap; gap: 6px; margin: .4rem 0 .6rem; position: relative; z-index: 2; }
+.paper-btn { font-size: 13px; padding: 2px 10px; border: 1px solid var(--border); border-radius: 999px; background: var(--code-bg); color: var(--primary); }
+.paper-btn:hover { border-color: var(--primary); }
+.post-header .paper-authors { margin-top: .6rem; }
+
+/* Thumbnail beside the text on wide screens */
+@media (min-width: 768px) {
+  .post-entry { display: grid; grid-template-columns: 220px 1fr; column-gap: 20px; align-items: start; }
+  .post-entry > *:not(.entry-cover):not(.entry-link) { grid-column: 2; }
+  .post-entry .entry-cover { grid-column: 1; grid-row: 1 / span 8; margin: 0; max-height: 160px !important; }
+  .post-entry .entry-cover img { max-height: 160px !important; }
+}
+
+.list-subhead { font-size: 24px; margin: 40px 0 16px; }
+
+/* Section labels on paper pages (## Abstract {.label}) */
+.post-content h2.label { font-size: 14px; font-weight: var(--semibold, 600); text-transform: uppercase; letter-spacing: .02em; color: var(--gray); margin: 24px 0 16px; }
+
+/* ---------- News ---------- */
+.news-list, .post-content .news-list { list-style: none; padding: 0; margin: 0; }
+.news-list li, .home-news li { display: grid; grid-template-columns: 6.5em 1fr; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+.news-date { color: var(--secondary); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.news-text p { margin: 0; }
+.home-news .news-text a { box-shadow: 0 1px 0 var(--primary); }
+.home-news { margin-top: 36px; width: 100%; }
+.home-news h2 { font-size: 18px; margin: 0 0 6px; }
+.home-news ul { list-style: none; padding: 0; margin: 0; font-size: 15px; line-height: 1.5; }
+.home-news-more { display: inline-block; margin-top: 10px; font-size: 15px; box-shadow: 0 1px 0 var(--primary); }
+@media (max-width: 480px) {
+  .news-list li, .home-news li { grid-template-columns: 1fr; gap: 2px; }
+}
+
+/* ---------- Research figures ---------- */
+.post-content figure.research-fig { margin: 8px 0 20px; }
+.post-content figure.research-fig img { width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--border); }
+.post-content figure.research-fig figcaption { font-size: 14px; color: var(--secondary); margin-top: 6px; text-align: start; }
+
+/* ---------- "To fill in" notes (remove before publishing) ---------- */
+.note { border: 1px dashed #b7791f; background: #fff8e6; color: #5f4410; border-radius: 6px; padding: 10px 14px; margin: 16px 0; font-size: 15px; }
+.note strong { color: #5f4410; }
+
+/* ---------- Full-width figure on each paper's own page ---------- */
+.post-single .entry-cover { max-height: none !important; overflow: visible !important; display: block !important; margin: 4px 0 28px; }
+.post-single .entry-cover img { max-height: none !important; width: 100% !important; height: auto; border-radius: 6px; border: 1px solid var(--border); background: #fff; }
+.post-single .entry-cover a { display: block; cursor: zoom-in; box-shadow: none !important; }
+/* Book covers stay book-sized */
+.post-single.section-books .entry-cover img { width: auto !important; max-height: 380px !important; }
+.post-single.section-books .entry-cover a { width: fit-content; margin: 0 auto; }

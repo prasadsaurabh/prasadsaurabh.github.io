@@ -8,38 +8,38 @@ authors:
 publication: >-
   IEEE/CVF Winter Conference on Applications of Computer Vision Workshops (GeoCV)
 tags:
-  - "WACVW 2026"
   - "Active Learning"
   - "Large Vision Models"
   - "GeoAI"
 summary: >-
-  **WACVW 2026** · We present a framework for adapting large vision models to geospatial semantic segmentation via gradient-based active learning. Our acquisition function combines uncertainty measures with model gradients, outperforming existing methods across various labeling budgets when transferring to previously unseen global regions.
+  We present a framework for adapting large vision models to geospatial semantic segmentation via gradient-based active learning. Our acquisition function combines uncertainty measures with model gradients, outperforming existing methods across various labeling budgets when transferring to previously unseen global regions.
 url_pdf: 'https://openaccess.thecvf.com/content/WACV2026W/GeoCV/papers/Faulkenberry_Gradient-Based_Active_Learning_for_Geospatial_Semantic_Segmentation_with_Large_Vision_WACVW_2026_paper.pdf'
 links:
-  - name: Link
+  - name: CVF
     url: 'https://openaccess.thecvf.com/content/WACV2026W/GeoCV/html/Faulkenberry_Gradient-Based_Active_Learning_for_Geospatial_Semantic_Segmentation_with_Large_Vision_WACVW_2026_paper.html'
 cover:
   image: "cover.png"
-  alt: "Active Learning with LVMs figure"
+  alt: "Example imagery and segmentation masks from gradient-based active learning with large vision models"
   relative: true
   hiddenInList: false
 ---
 
----
-
-##### Download
-
-- [Paper](https://openaccess.thecvf.com/content/WACV2026W/GeoCV/papers/Faulkenberry_Gradient-Based_Active_Learning_for_Geospatial_Semantic_Segmentation_with_Large_Vision_WACVW_2026_paper.pdf)
 
 ---
 
-##### Citation
+## Summary {.label}
+
+We present a framework for adapting large vision models to geospatial semantic segmentation via gradient-based active learning. Our acquisition function combines uncertainty measures with model gradients, outperforming existing methods across various labeling budgets when transferring to previously unseen global regions.
+
+---
+
+## Citation {.label}
 
 ```BibTeX
 @InProceedings{Faulkenberry_2026_WACV,
   author = {Faulkenberry, Ryan and Prasad, Saurabh},
   title = {Gradient-Based Active Learning for Geospatial Semantic Segmentation with Large Vision Models},
-  booktitle = {WACV Workshops (GeoCV)},
+  booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) Workshops},
   year = {2026},
   pages = {810--820}
 }

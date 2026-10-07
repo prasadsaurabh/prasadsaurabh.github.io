@@ -6,11 +6,10 @@ authors:
   - Jocelyn Chanussot
 publication: "Springer Nature, 2020"
 tags:
-  - "Springer 2020"
   - "Hyperspectral"
   - "Machine Learning"
   - "Signal Processing"
-summary: "**Springer 2020** · A comprehensive reference covering advances in machine learning and signal processing for hyperspectral image analysis, including deep learning, semi-supervised methods, and domain adaptation."
+summary: "A comprehensive reference covering advances in machine learning and signal processing for hyperspectral image analysis, including deep learning, semi-supervised methods, and domain adaptation."
 cover:
   image: "cover.png"
   alt: "Hyperspectral Image Analysis book cover"
@@ -21,16 +20,14 @@ links:
     url: 'https://link.springer.com/book/10.1007/978-3-030-38617-7'
 ---
 
-##### About
+## About {.label}
 
 A comprehensive reference volume covering advances in machine learning and signal processing for hyperspectral image analysis. Topics include deep learning architectures, semi-supervised and unsupervised methods, domain adaptation, and applications in remote sensing and biomedicine.
 
-**Editors:** Saurabh Prasad, Jocelyn Chanussot
-**Publisher:** Springer Nature, 2020
 
 ---
 
-##### Citation
+## Citation {.label}
 
 ```BibTeX
 @book{Prasad2020Hyperspectral,

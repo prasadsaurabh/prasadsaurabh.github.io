@@ -1,5 +1,5 @@
 baseURL: "https://prasadsaurabh.github.io"
-title: "Saurabh Prasad"
+title: "Saurabh Prasad · University of Houston"
 pagination:
   pagerSize: 20
 theme: PaperMod
@@ -13,24 +13,29 @@ menu:
     - name: Papers
       url: /papers/
       weight: 1
-    - name: Books
-      url: /books/
-      weight: 2
     - name: Research
       url: /research/
-      weight: 3
+      weight: 2
     - name: Team
       url: /team/
-      weight: 4
-    - name: News
-      url: /news/
-      weight: 5
+      weight: 3
     - name: Teaching
       url: /teaching/
-      weight: 6
+      weight: 4
+    - name: Join
+      url: /join/
+      weight: 5
 params:
-  description: "Machine Learning and Signal Processing Lab, University of Houston"
-  author: 
+  description: "Saurabh Prasad is a Professor of Electrical & Computer Engineering at the University of Houston, working on machine learning for geospatial imaging (GeoAI) and biomedicine."
+  author: "Saurabh Prasad"
+  hideAuthor: true
+  images: ["picture.jpeg"]
+  schema:
+    publisherType: "Person"
+    sameAs:
+      - "https://scholar.google.com/citations?user=g_FRerIAAAAJ"
+      - "https://www.linkedin.com/in/saurabh-prasad-2675a217/"
+      - "https://github.com/prasadsaurabh"
   DateFormat: "January 2006"
   defaultTheme: light
   disableThemeToggle: true
@@ -48,7 +53,9 @@ params:
   profileMode:
     enabled: true
     title: "Saurabh Prasad"
-    subtitle: "I am a Full Professor of Electrical & Computer Engineering where I also serve as the Director of Graduate Studies at the University of Houston. I direct the Machine Learning and Signal Processing (MLSP) Laboratory. My research focuses on machine learning for geospatial imaging (GeoAI) and biomedicine, with emphasis on foundation models, active learning, and multi-sensor image analysis. **IEEE GRSS Distinguished Lecturer** 2026 President's Circle Awards Scholar. **Area Chair: ICLR, NeurIPS**. Organizer: GeoCV @ WACV, MORSE @ CVPR. Funding: NASA, NSF, NIH, DoD, Amazon AWS."
+    subtitle: >-
+      I'm a Professor of Electrical & Computer Engineering and Director of Graduate Studies at the University of Houston, where I direct the Machine Learning and Signal Processing (MLSP) Lab. We build machine learning for geospatial imaging (GeoAI) and biomedicine, with a focus on foundation models, active learning, and multi-sensor image analysis.<br><br>
+      **IEEE GRSS Distinguished Lecturer** · 2026 President's Circle Awards Scholar · Area Chair, ICLR and NeurIPS · Organizer, GeoCV @ WACV and MORSE @ CVPR · Funded by NASA, NSF, NIH, DoD and Amazon AWS
     imageUrl: "picture.jpeg"
     imageWidth: 120
     imageHeight: 120
@@ -56,32 +63,33 @@ params:
     buttons:
       - name: Papers
         url: /papers/
-      - name: Books
-        url: /books/
       - name: Research
         url: /research/
       - name: Team
         url: /team/
-      - name: News
-        url: /news/
       - name: Teaching
         url: /teaching/
+      - name: Join
+        url: /join/
+      - name: Student guide
+        url: /research-guide/
   assets:
     disableScrollBarStyle: true
   cover:
     hiddenInList: false
-    hiddenInSingle: true
+    hiddenInSingle: false
+    linkFullImages: true
   label:
     text: "Saurabh Prasad"
   socialIcons:
     - name: Email
-      url: https://forms.cloud.microsoft/r/XTFj5Z30nx
+      url: mailto:sprasad2@uh.edu
     - name: Google Scholar
       url: https://scholar.google.com/citations?user=g_FRerIAAAAJ
     - name: LinkedIn
       url: https://www.linkedin.com/in/saurabh-prasad-2675a217/
     - name: GitHub
-      url: https://github.com/
+      url: https://github.com/prasadsaurabh
 markup:
   goldmark:
     renderer:

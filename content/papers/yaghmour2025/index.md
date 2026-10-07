@@ -9,38 +9,38 @@ authors:
 publication: >-
   IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (MORSE)
 tags:
-  - "CVPRW 2025"
   - "Foundation Models"
   - "Domain Generalization"
   - "GeoAI"
 summary: >-
-  **CVPRW 2025** · This work addresses domain differences arising from sensor and sensing condition variations that lead to sub-optimal performance when deploying geospatial foundation models. We propose a synergistic framework combining pseudo-labeling and generative learning for robust cross-sensor knowledge transfer.
+  This work addresses domain differences arising from sensor and sensing condition variations that lead to sub-optimal performance when deploying geospatial foundation models. We propose a synergistic framework combining pseudo-labeling and generative learning for robust cross-sensor knowledge transfer.
 url_pdf: 'https://arxiv.org/pdf/2505.01558'
 links:
-  - name: Link
+  - name: arXiv
     url: 'https://arxiv.org/abs/2505.01558'
 cover:
   image: "cover.png"
-  alt: "FM_DA figure"
+  alt: "Cross-sensor domain generalization framework combining pseudo-labeling and generative learning"
   relative: true
   hiddenInList: false
 ---
 
----
-
-##### Download
-
-- [Paper](https://arxiv.org/pdf/2505.01558)
 
 ---
 
-##### Citation
+## Summary {.label}
+
+This work addresses domain differences arising from sensor and sensing condition variations that lead to sub-optimal performance when deploying geospatial foundation models. We propose a synergistic framework combining pseudo-labeling and generative learning for robust cross-sensor knowledge transfer.
+
+---
+
+## Citation {.label}
 
 ```BibTeX
 @InProceedings{Yaghmour2025,
   author = {Yaghmour, Anan and Crawford, Melba and Prasad, Saurabh},
-  title = {A Sensor Agnostic Domain Generalization Framework},
-  booktitle = {CVPR Workshops (MORSE)},
+  title = {A Sensor Agnostic Domain Generalization Framework for Leveraging Geospatial Foundation Models},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
   year = {2025},
   pages = {3047--3056}
 }

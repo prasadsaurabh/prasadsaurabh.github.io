@@ -1,0 +1,31 @@
+# Newest first. The homepage shows the first three items.
+- date: "Jun 2026"
+  text: 'Paper at the CVPR 2026 MORSE Workshop: [DINO Soars: DINOv3 for Open-Vocabulary Semantic Segmentation of Remote Sensing Imagery](/papers/cvprw2026/), Ryan Faulkenberry and Saurabh Prasad.'
+- date: "Jun 2026"
+  text: '[MORSE 2026](https://sites.google.com/view/cvpr-morse) workshop on Foundation Models in Remote Sensing at CVPR in Denver, CO.'
+- date: "Mar 2026"
+  text: '[GeoCV 2026](https://sites.google.com/view/geocv/) workshop held at WACV in Tucson, AZ. [Proceedings](https://openaccess.thecvf.com/WACV2026_workshops/GeoCV)'
+- date: "Mar 2026"
+  text: 'Paper at WACV 2026: [UniDiff: Parameter-Efficient Adaptation of Diffusion Models for Land Cover Classification](/papers/hu2025unidiff/), Yuzhen Hu and Saurabh Prasad.'
+- date: "Mar 2026"
+  text: 'Paper at the WACV 2026 GeoCV Workshop: [Gradient-Based Active Learning for Geospatial Semantic Segmentation with Large Vision Models](/papers/faulkenberry2026/), Ryan Faulkenberry and Saurabh Prasad.'
+- date: "Feb 2026"
+  text: 'Paper published in Scientific Reports: [mViSE: A Visual Search Engine for Analyzing Multiplex IHC Brain Tissue Images](/papers/huang2026mvise/).'
+- date: "Jan 2026"
+  text: 'Paper published in IEEE JSTARS: [Advancing Efficient Vision Foundation Models for Analysis of Multispectral Imagery](/papers/liu2026/), Wei Liu, Saurabh Prasad and Melba Crawford.'
+- date: "Jul 2025"
+  text: 'Spotlight paper at the ICML 2025 TerraBytes Workshop: [Label-Efficient Hyperspectral Image Classification via Spectral FiLM Modulation of Low-Level Pretrained Diffusion Features](/papers/hu2025label/).'
+- date: "Jun 2025"
+  text: 'Paper at the CVPR 2025 MORSE Workshop: [A Sensor Agnostic Domain Generalization Framework for Leveraging Geospatial Foundation Models](/papers/yaghmour2025/).'
+- date: "Feb 2025"
+  text: 'Paper at the WACV 2025 GeoCV Workshop: [Layer Optimized Spatial Spectral Masked Autoencoder for Semantic Segmentation of Hyperspectral Imagery](/papers/perez2025/), Aaron Perez and Saurabh Prasad.'
+- date: "Sep 2024"
+  text: 'Paper published in IEEE Transactions on Geoscience and Remote Sensing: [Investigation of Hierarchical Spectral Vision Transformer Architecture for Classification of Hyperspectral Imagery](/papers/liu2024/).'
+- date: "Jun 2024"
+  text: 'New edited book: [Advances in Machine Learning and Image Analysis for GeoAI](/books/elsevier2024/), Elsevier.'
+- date: "2024"
+  text: 'Named **IEEE GRSS Distinguished Lecturer**.'
+- date: "Jul 2022"
+  text: 'Amazon Web Services Research Award to undertake research on new deep learning architectures for GeoAI.'
+- date: "2022"
+  text: 'New NASA project as PI on deep knowledge transfer, image super-resolution, and emerging deep learning architectures for seamless knowledge transfer between multi-sensor, multi-temporal geospatial imagery.'

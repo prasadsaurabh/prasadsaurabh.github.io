@@ -7,11 +7,10 @@ authors:
   - Jun Li
 publication: "Elsevier, 2024"
 tags:
-  - "Elsevier 2024"
   - "GeoAI"
   - "Machine Learning"
   - "Remote Sensing"
-summary: "**Elsevier 2024** · An edited volume covering state-of-the-art advances in machine learning and image analysis for geospatial AI, including deep learning, foundation models, transfer learning, and multi-sensor data fusion."
+summary: "An edited volume covering state-of-the-art advances in machine learning and image analysis for geospatial AI, including deep learning, foundation models, transfer learning, and multi-sensor data fusion."
 cover:
   image: "cover.png"
   alt: "Advances in Machine Learning for GeoAI book cover"
@@ -22,16 +21,14 @@ links:
     url: 'https://www.sciencedirect.com/book/9780443190377'
 ---
 
-##### About
+## About {.label}
 
 This edited volume covers advances in machine learning and image analysis for GeoAI. Topics include deep learning, foundation models, transfer learning, active learning, and multi-sensor data fusion for earth observation applications.
 
-**Editors:** Saurabh Prasad, Jocelyn Chanussot, Jun Li
-**Publisher:** Elsevier, 2024
 
 ---
 
-##### Citation
+## Citation {.label}
 
 ```BibTeX
 @book{Prasad2024GeoAI,
